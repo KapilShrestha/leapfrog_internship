@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body{
     flex-shrink: 0;
     background: var(--Header-text, #343D33);
@@ -5,9 +10,9 @@ body{
     padding-left: 179px;
     /* padding-bottom: 96px; */
 }
-.first-row{
+.styled-div{
     display: flex;
-    
+    flex-wrap: wrap;
 }
 
 .main-image{
@@ -16,7 +21,6 @@ body{
 }
 
 .main-image img{
-    
     width: 534px;
     height: 354px;
 }
@@ -77,7 +81,7 @@ body{
     text-transform: uppercase;
 }
 
-.second-row{
+.bottom-image{
     width: 1040px;
     height: 409px;
     overflow: hidden;
@@ -86,7 +90,7 @@ body{
    
 }
 
-.second-row img{
+.bottom-image img{
     width: 100%;
     height: auto;
     position: absolute;
