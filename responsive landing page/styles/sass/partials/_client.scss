@@ -1,0 +1,11 @@
+.client{
+    background: rgba(255, 255, 255, 0.20);
+    &--items{
+        display: flex;
+    justify-content: space-between;
+    }
+    @media screen and (max-width:$small) {
+        display:none;
+    }
+    
+}

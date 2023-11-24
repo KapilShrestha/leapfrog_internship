@@ -1,0 +1,28 @@
+.header{
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    
+    &__logo{
+        margin: 0;
+    }
+    &__nav{
+        display: flex;
+        list-style-type: none;
+        gap: 32px;
+        align-items: center;
+        @media screen and (max-width:$small) {
+            display: none;
+            
+        }
+
+    }
+    figure{
+        @media screen and (min-width:$small) {
+            display: none;
+        }
+        
+    }
+}
+
