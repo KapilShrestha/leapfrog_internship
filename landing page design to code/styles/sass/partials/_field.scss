@@ -1,0 +1,21 @@
+.field{
+    &__blueborder{
+    border-radius: 20px;
+    border: 3px solid $blue;
+    background-color: transparent;
+    padding-left: 25px;
+    padding: 20px 0 20px 30px;
+    }
+    &__greyborder{
+        border-radius: 20px;
+        border: 3px solid rgba(196, 196, 196, 0.15);
+        padding: 20px 0 20px 30px;
+    }
+    &__grey--bg{
+        border-radius: 20px;
+        background: rgba(11, 21, 60, 0.15);
+        border: none;
+        padding: 20px 0 20px 30px;
+    }
+    
+}

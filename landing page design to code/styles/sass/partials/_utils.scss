@@ -1,0 +1,10 @@
+body{
+    background: url("/assets/img/hero_background.jpeg");
+    
+}
+.bg{
+    &__image{
+        background: url("/assets/img/hero_background.jpeg");
+    }
+    margin: 0;
+}   

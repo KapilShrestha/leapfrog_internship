@@ -1,0 +1,70 @@
+.font{
+    font-family: "Montserrat";
+    &__small{
+        font-size: 18px;
+        font-style: normal;
+        line-height: normal;
+        font-style: normal;
+        &--grey{
+            color: $grey;
+            text-align: center;
+            font-weight: 500;
+            
+
+        }
+        &--black{
+            color: $black;
+            text-align: center;
+            font-weight: 500;
+            
+        }
+        &--blue{
+            color: $blue;
+            font-weight: 700;
+            
+        }
+        
+    }
+    &__medium{
+        font-size: 24px;
+        font-style: normal;
+        line-height: normal;
+        &--white{
+            color: $white;
+            font-weight: 700;
+        }
+        &--grey{
+            color: $grey;
+            font-weight: 500; 
+        }
+        &--blue{
+            color: $blue;
+            font-weight: 700;
+        }
+        &--black{
+            color: $black;
+            font-weight: 700; 
+        }
+    }
+    &__big{
+        font-size: 48px;
+        line-height: normal;
+        &--white{
+            color: $white;
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+        }
+        &--blue{
+            color: $blue;
+            font-style: normal;
+            font-weight: 800;
+        }
+        &--black{
+            color: $black;
+            text-align: center;
+            font-style: no;
+            font-weight: 700;
+        }
+    }
+}

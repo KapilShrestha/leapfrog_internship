@@ -1,0 +1,46 @@
+.checkform{
+    border-radius:20px;
+    background: rgba(196, 196, 196, 0.10);
+    padding-bottom:  35px;
+    &__top{
+        border-radius: 20px 20px 0px 0px;
+        background: rgba(196, 196, 196, 0.05);
+        padding: 36px 0 36px  93px;
+    }
+    &__mid{
+        padding: 0 93px 0 93px ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+
+    }
+    &__bottom{
+        margin: 0 93px 35px 93px;
+        padding: 20px 174px;
+        border-radius: 20px;
+        background: rgba(196, 196, 196, 0.05);
+        text-decoration: none;
+        
+    }
+}
+
+#checkform__fields{
+
+    padding: 35px 93px 35px 93px;
+}
+#checkform__bottom--text{
+    // margin: 20px 174px;
+
+}
+#checkform__name{
+    width: 450px;
+
+}
+#checkform__number{
+    width: 450px;
+
+}
+#checkform__anchor{
+    text-decoration: none;
+}

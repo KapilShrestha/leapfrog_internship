@@ -1,0 +1,297 @@
+.container {
+  margin: auto;
+  padding: 0 70px;
+}
+
+body {
+  background: url("/assets/img/hero_background.jpeg");
+}
+
+.bg {
+  margin: 0;
+}
+.bg__image {
+  background: url("/assets/img/hero_background.jpeg");
+}
+
+.font {
+  font-family: "Montserrat";
+}
+.font__small {
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+  font-style: normal;
+}
+.font__small--grey {
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-weight: 500;
+}
+.font__small--black {
+  color: #000;
+  text-align: center;
+  font-weight: 500;
+}
+.font__small--blue {
+  color: #17C2EC;
+  font-weight: 700;
+}
+.font__medium {
+  font-size: 24px;
+  font-style: normal;
+  line-height: normal;
+}
+.font__medium--white {
+  color: #FFF;
+  font-weight: 700;
+}
+.font__medium--grey {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+.font__medium--blue {
+  color: #17C2EC;
+  font-weight: 700;
+}
+.font__medium--black {
+  color: #000;
+  font-weight: 700;
+}
+.font__big {
+  font-size: 48px;
+  line-height: normal;
+}
+.font__big--white {
+  color: #FFF;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+}
+.font__big--blue {
+  color: #17C2EC;
+  font-style: normal;
+  font-weight: 800;
+}
+.font__big--black {
+  color: #000;
+  text-align: center;
+  font-style: no;
+  font-weight: 700;
+}
+
+.nav {
+  background-image: url("");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 41px 0;
+}
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.nav ul li {
+  text-decoration: none;
+}
+.nav a {
+  text-decoration: none;
+}
+
+.btn__bluebg {
+  background: #17C2EC;
+  border: none;
+}
+.btn__greybg--blueborder {
+  border: 2px solid #17C2EC;
+  background: rgba(196, 196, 196, 0.1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.btn__greybg--noborder {
+  background: rgba(196, 196, 196, 0.1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+
+button {
+  gap: 10px;
+  border-radius: 20px;
+  padding: 20px 25px;
+}
+
+.hero {
+  margin-top: 100px;
+}
+.hero__top {
+  display: flex;
+  justify-content: space-between;
+}
+.hero__schedule {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.hero__actions {
+  display: flex;
+  gap: 20px;
+  padding: 50px 0;
+}
+.hero__ribbon--back {
+  border-radius: 20px 20px 0px 0px;
+  background: rgba(196, 196, 196, 0.05);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.hero__ribbon--front {
+  border-radius: 20px 20px 0px 0px;
+  background: rgba(196, 196, 196, 0.1);
+}
+.hero__ribbon--content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  gap: 20px;
+}
+#hero--title {
+  padding: 40px 50px 50px 0;
+  text-align: left;
+  width: 550px;
+  word-wrap: break-word;
+}
+
+#hero--description {
+  width: 600px;
+  word-wrap: break-word;
+  font-weight: 700;
+}
+
+.icon__bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(196, 196, 196, 0.1);
+  padding: 20px;
+}
+.icon img {
+  width: 50px;
+  height: 30px;
+}
+
+.vaccine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.5);
+  height: 150px;
+  padding: 0 71px;
+}
+.vaccine__type img {
+  filter: grayscale(99%);
+}
+
+.field__blueborder {
+  border-radius: 20px;
+  border: 3px solid #17C2EC;
+  background-color: transparent;
+  padding-left: 25px;
+  padding: 20px 0 20px 30px;
+}
+.field__greyborder {
+  border-radius: 20px;
+  border: 3px solid rgba(196, 196, 196, 0.15);
+  padding: 20px 0 20px 30px;
+}
+.field__grey--bg {
+  border-radius: 20px;
+  background: rgba(11, 21, 60, 0.15);
+  border: none;
+  padding: 20px 0 20px 30px;
+}
+
+.checkform {
+  border-radius: 20px;
+  background: rgba(196, 196, 196, 0.1);
+  padding-bottom: 35px;
+}
+.checkform__top {
+  border-radius: 20px 20px 0px 0px;
+  background: rgba(196, 196, 196, 0.05);
+  padding: 36px 0 36px 93px;
+}
+.checkform__mid {
+  padding: 0 93px 0 93px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkform__bottom {
+  margin: 0 93px 35px 93px;
+  padding: 20px 174px;
+  border-radius: 20px;
+  background: rgba(196, 196, 196, 0.05);
+  text-decoration: none;
+}
+
+#checkform__fields {
+  padding: 35px 93px 35px 93px;
+}
+
+#checkform__name {
+  width: 450px;
+}
+
+#checkform__number {
+  width: 450px;
+}
+
+#checkform__anchor {
+  text-decoration: none;
+}
+
+.registration {
+  background-image: url("/assets/img/registration_bg.jpeg");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 266px;
+}
+.registration__left--action {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  gap: 36px;
+  text-align: center;
+}
+.registration__header {
+  padding-top: 40px 0 20px 0;
+}
+.registration__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.registration__image--section {
+  border-radius: 20px;
+  background: #0B153C;
+}
+
+.width100 {
+  width: 100%;
+}
+
+#get__vaccine--text {
+  text-align: left;
+  width: 450px;
+  word-wrap: break-word;
+}
+
+#registration__notification--text {
+  text-align: left;
+}
+
+/*# sourceMappingURL=style.css.map */

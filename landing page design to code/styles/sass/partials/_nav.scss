@@ -1,0 +1,30 @@
+.nav{
+    background-image: url("");
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 41px 0;
+    
+    ul{
+        
+        list-style-type: none;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        li{
+            text-decoration: none;
+        }
+        
+    }
+    a{
+        text-decoration: none;
+    }
+    // &__item{
+        
+    //     &--list{
+            
+
+    //     }
+    // }
+    
+}

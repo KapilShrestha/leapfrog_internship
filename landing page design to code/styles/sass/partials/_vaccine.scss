@@ -1,0 +1,63 @@
+.vaccine{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.50);
+    height: 150px;
+    padding: 0 71px;
+    
+    &__type{
+        img{
+            filter: grayscale(99%);
+        }
+        // max-width: 100%;
+        // max-height: 100%;
+    }
+
+
+}
+// #vaccine_moderna{
+//     background: url("/assets/img/vaccine_moderna.png"), lightgray 50% / cover no-repeat;
+//     width: 288.667px;
+//     height: 66.393px;
+//     flex-shrink: 2;
+// }
+// #vaccine_pfizer{
+//     background: url("/assets/img/vaccine_pfizer.png"), lightgray 50% / cover no-repeat;
+//     width: 288.667px;
+//     height: 117.98px;
+//     flex-shrink: 0;
+
+// }
+// #vaccine_astrazenca{
+//     background: url("/assets/img/vaccine_astrazenca.png"), lightgray -28.161px -53.58px / 119.655% 219.289% no-repeat;
+//     width: 288.667px;
+//     height: 81.824px;
+//     flex-shrink: 0;
+// }
+// #vaccine_sinovac{
+//     background: url("/assets/img/vaccine_sinovac.png"), lightgray -38.082px -103.804px / 124.093% 464.286% no-repeat; 
+//     width: 288.667px;
+//     height: 57.899px;
+//     flex-shrink: 0;
+// }
+
+// #vaccine__container {
+//     position: relative;
+    
+//     height: 150px;
+
+//   }
+//   #vaccine__overlay,
+//   #vaccine__images {
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//   }
+//   #vaccine__overlay {
+//     z-index: 10;
+    
+//   }

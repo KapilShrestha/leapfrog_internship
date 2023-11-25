@@ -1,0 +1,65 @@
+.hero{
+       margin-top: 100px;
+       
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    &__left{
+
+    }
+    &__schedule{
+        display:flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__actions{
+        display: flex;
+        gap: 20px;
+        padding: 50px 0;
+    }
+    &__ribbon{
+        &--back{
+            border-radius: 20px 20px 0px 0px;
+            background: rgba(196, 196, 196, 0.05);
+            padding-top: 10px;
+            margin-top: 10px;
+
+        }
+        &--front{
+            border-radius: 20px 20px 0px 0px;
+            background: rgba(196, 196, 196, 0.10);
+            
+
+        }
+        &--content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            gap: 20px   ;
+        }
+        &--elements{
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // gap: 20px;
+
+        }
+    }
+    
+}
+
+#hero--title{
+    padding: 40px 50px 50px 0;
+    text-align: left;
+    width: 550px;
+    word-wrap: break-word;
+    
+}
+#hero--description{
+    width: 600px;
+    word-wrap: break-word;
+    font-weight: 700;
+}
