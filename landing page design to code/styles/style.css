@@ -30,7 +30,7 @@ figure {
   margin: 0;
 }
 .bg__image {
-  background: url("/assets/img/hero_background.png");
+  background: url("/assets/img/hero_background.jpg");
 }
 
 body {
@@ -348,7 +348,7 @@ button {
 }
 
 .registration {
-  background-image: url("/assets/img/registration_bg.jpeg");
+  background-image: url("/assets/img/registration_bg.png");
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -389,7 +389,7 @@ button {
 }
 
 .testimonial {
-  background: url("/assets/img/registration_bg.jpeg");
+  background: url("/assets/img/registration_bg.png");
 }
 .testimonial__text {
   text-align: center;
@@ -486,7 +486,7 @@ button {
 .footer {
   background-color: #0B153C;
   filter: grayscale(20%);
-  background: url("/assets/img/hero_background.png");
+  background: url("/assets/img/hero_background.jpg");
   display: flex;
   justify-content: space-between;
   align-items: center;
