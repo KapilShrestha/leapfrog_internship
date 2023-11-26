@@ -348,7 +348,7 @@ button {
 }
 
 .registration {
-  background-image: url("/assets/img/registration_bg.png");
+  background-image: url("../assets/img/registration_bg.png");
   display: flex;
   justify-content: space-between;
   align-items: center;
