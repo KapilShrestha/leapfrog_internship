@@ -1,4 +1,18 @@
 .container{
     margin: auto;
     padding: 0 70px;
+    @media screen and (max-width:576px) {
+        padding: 0 35px;
+    }
+    @media screen and (min-width:576px) and (max-width:992px){
+        padding: 0 50px;
+    } 
 }
+@media screen and (max-width: 992px) {
+    .hero__left,
+    .hero__right,
+    .registration__left,
+    .registration__right {
+      width: 100%;
+    }
+  }

@@ -6,13 +6,24 @@
     background: rgba(255, 255, 255, 0.50);
     height: 150px;
     padding: 0 71px;
+    max-width: 100%;
+    white-space: nowrap;
+    @media screen and (max-width:992px) {
+        background-color: $white;
+        white-space: nowrap;
+        
+    }
     
     &__type{
+        max-width: 100%;
+        height: auto;
+        justify-content: space-around;
+        box-sizing: border-box;
         img{
+            max-width: 100%;
+            height: auto;
             filter: grayscale(99%);
         }
-        // max-width: 100%;
-        // max-height: 100%;
     }
 
 

@@ -1,19 +1,35 @@
 .nav{
-    background-image: url("");
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 41px 0;
+    box-sizing: border-box;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 41px 0;
+        @media screen and (max-width:992px) {
+            display: none;  
+        }
+    img{
+        @media screen and (min-width:992px) {
+            display: none;  
+        }
+    }
     
+    }
     ul{
-        
         list-style-type: none;
         display: flex;
         gap: 25px;
         align-items: center;
         li{
             text-decoration: none;
+            
         }
+        
+        
         
     }
     a{

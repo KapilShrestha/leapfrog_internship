@@ -12,15 +12,21 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+        @media screen and (max-width:992px){
+            flex-direction: column; 
+            gap: 20px;
+            align-items: left;
+        }
 
     }
     &__bottom{
         margin: 0 93px 35px 93px;
-        padding: 20px 174px;
+        padding: 20px 0;
         border-radius: 20px;
         background: rgba(196, 196, 196, 0.05);
         text-decoration: none;
+        max-height: 70px;
+        text-align: center;
         
     }
 }
@@ -29,8 +35,16 @@
 
     padding: 35px 93px 35px 93px;
 }
+
 #checkform__bottom--text{
+    white-space: nowrap;
     // margin: 20px 174px;
+    @media screen and (max-width:992px){
+        font-size: 14px;  
+    }
+    @media screen and (min-width:992px){
+        font-size: 24px;  
+    }
 
 }
 #checkform__name{
