@@ -1,0 +1,32 @@
+.footer{
+    background-color: #0B153C;
+    filter: grayscale(20%);
+    // background: url("/assets/img/hero_background.jpeg");
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 328px 80px 133px 67px;
+   
+    &__wrapper{
+        display: flex;
+        gap: 20px;
+        
+        
+    }
+    ul{
+        list-style: none;
+
+    
+        a{
+            text-decoration: none;
+        }
+    
+    }
+    &__social{
+        display: flex;
+        gap: 10px;
+        
+       
+    }
+    
+}

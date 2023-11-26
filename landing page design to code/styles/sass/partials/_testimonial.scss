@@ -1,0 +1,92 @@
+.testimonial{
+    background: url("/assets/img/registration_bg.jpeg");
+    &__text{
+        text-align: center;
+    }
+}
+.review{
+    margin: 0px 74px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+    &__descriptionfont{
+        color: rgba(46, 18, 18, 0.6);
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    &__name{
+        margin: 0;
+        padding-bottom: 5px;
+        text-align: left;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    &__address{
+        margin: 0;
+        color: rgba(0, 0, 0, 0.50);
+        text-align: left;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    &__box{
+        border-radius: 20px;
+        background: rgba(196, 196, 196, 0.50);
+        max-width: 400px;
+        height: auto;
+        padding: 30px 35 45px 35px;
+        &--people{
+            display:flex;
+            justify-content: left;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;  
+        }
+        &__description{
+            padding-top: 40px;
+        }
+        
+    }
+    &__image{
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+    }
+    &__description{
+        padding: 0 33px 44px 33px;
+        margin: 0;
+    }
+}
+#testimonial__title{
+    padding: 57px 0 20px 0;
+    margin: 0;
+
+}
+#testimonial__description{
+    padding: 40px 0 100px 0;
+    width: 953px;
+    margin: auto;
+}
+#testimonial__heading{
+    margin: 0;
+    
+}
+
+#review__box--blue{
+    background: $blue;
+}
+
+#review__font--white{
+    color: rgba(255, 255, 255, 0.75);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+}
