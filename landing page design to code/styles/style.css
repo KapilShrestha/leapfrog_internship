@@ -31,6 +31,7 @@ figure {
 }
 .bg__image {
   background-image: url("/assets/img/hero_background.png");
+  background-color: blue;
 }
 
 body {
@@ -486,7 +487,8 @@ button {
 .footer {
   background-color: #0B153C;
   filter: grayscale(20%);
-  background-image: url("/assets/img/hero_background.png");
+  background: url("/assets/img/hero_background.png");
+  background-color: blue;
   display: flex;
   justify-content: space-between;
   align-items: center;
