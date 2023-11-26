@@ -394,6 +394,12 @@ button {
 .testimonial__text {
   text-align: center;
 }
+@media screen and (max-width: 992px) {
+  .testimonial__text {
+    align-items: center;
+    text-align: center;
+  }
+}
 
 .review {
   margin: 0px 74px;
@@ -401,6 +407,16 @@ button {
   justify-content: space-between;
   align-items: center;
   gap: 45px;
+}
+@media screen and (max-width: 992px) {
+  .review {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0px;
+    padding: 60px 0 160px 0;
+  }
 }
 .review__descriptionfont {
   color: rgba(46, 18, 18, 0.6);
@@ -435,6 +451,13 @@ button {
   max-width: 400px;
   height: auto;
   padding: 30px 35 45px 35px;
+}
+@media screen and (max-width: 992px) {
+  .review__box {
+    flex-direction: column;
+    gap: 30px;
+    margin: 0;
+  }
 }
 .review__box--people {
   display: flex;
