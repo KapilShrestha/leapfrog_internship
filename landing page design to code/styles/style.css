@@ -1,6 +1,7 @@
 .container {
   margin: auto;
   padding: 0 70px;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 576px) {
   .container {
@@ -297,6 +298,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 @media screen and (max-width: 992px) {
   .checkform__mid {
@@ -427,6 +429,7 @@ button {
   line-height: normal;
 }
 .review__box {
+  margin-bottom: 123px;
   border-radius: 20px;
   background: rgba(196, 196, 196, 0.5);
   max-width: 400px;
