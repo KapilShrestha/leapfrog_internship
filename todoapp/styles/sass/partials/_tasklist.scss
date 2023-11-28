@@ -1,0 +1,33 @@
+.task__wrapper{
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 20px 20px;
+    height: 100%;
+    width: inherit;
+}
+
+
+ul{
+    li{
+        list-style: none;
+        cursor: pointer;
+    }
+}
+
+.circular__checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    // outline: none;
+    cursor: pointer;
+  }
+  
+  /* Additional styling when checked */
+  .circular-checkbox:checked {
+    background-color: #008000;
+    border: 2px solid #008000;
+  }
+  

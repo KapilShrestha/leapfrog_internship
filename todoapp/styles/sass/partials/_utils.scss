@@ -1,0 +1,14 @@
+.container{
+    padding: 40px;
+    margin: 40px;
+}
+
+.font{
+    font-family: Montserrat;
+    color: $white;
+    font-size: 20px;
+    text-align: center;
+    &__black{
+        color: $black;
+    }
+}

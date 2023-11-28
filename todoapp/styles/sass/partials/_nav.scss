@@ -1,0 +1,20 @@
+.navigation{
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px 25px 0 0;
+    max-height: 10px;
+    text-align: center;
+
+    &__icon{
+       
+    }
+    &__header{
+        
+    }
+}
+
+.navigation__icon:hover {
+    transform: scale(1.5);
+}

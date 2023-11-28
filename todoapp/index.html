@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body class="font">
+    <!-- nav start -->
+    <nav>
+        <section class="navigation container">
+            <span class="material-symbols-outlined navigation__icon">list</span>
+            <p class="navigation__header">Activities</p>
+            <span class="material-symbols-outlined navigation__icon">add</span>
+        </section>
+    </nav>
+    <!-- nav ends -->
+
+    <!-- main starts -->
+    <section>
+        <form action="" class="container form ">
+            <div class="form__items">
+                <!-- <input type="text" name="search" id="" placeholder="search " class="font form__input"> -->
+                <div class="form__div">
+                    <input type="text" name="add__task" id="input-box" placeholder="Add tasks " class=" form__input font font__black">
+                    <button type="button" class="font form__btn" id="form-btn">Add new</button>
+                </div>
+            </div>
+            
+        </form>
+
+    </section>
+    <!-- main ends -->
+    <!-- tasklists -->
+    <div class="task__wrapper container">
+        <ul id="task-fields-container" class="container task__fields__container">
+        
+        </ul>
+
+    </div>
+    
+    <!-- tasklist ends -->
+    
+
+    <script src="scripts/index.js"></script>
+
+</body>
+</html>

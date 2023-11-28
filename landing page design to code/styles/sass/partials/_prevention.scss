@@ -1,8 +1,21 @@
-.prevention{
-    &__symptom{
-        &--wrapper{
-            border-radius: 10px;
-            background: rgba(196, 196, 196, 0.20);
+.symptom{
+    &__item{
+        display: flex;
+        align-items: center;
+        position: relative;
+        figure{
+            margin: 0;
+            max-width: 140px;
+            position: absolute;
+            left: -45px;
+        }
+        img{
+            width: 100%;
+
+        }
+        &--text{
+            border: 1px solid red;
+            padding: 10px 60px 10px 80px;
         }
     }
 }

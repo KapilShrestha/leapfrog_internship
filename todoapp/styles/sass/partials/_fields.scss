@@ -1,0 +1,17 @@
+// .task{
+//     &__field{
+//         border: 1px solid #ccc;
+//         border-radius: 20px; 
+//         padding: 8px;
+//         box-sizing: border-box;
+//         text-align: center;
+//         height: 50px;
+//     }
+// }
+
+.task__fields__container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}

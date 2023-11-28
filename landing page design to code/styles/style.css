@@ -279,6 +279,11 @@ button {
   border: none;
   padding: 20px 0 20px 30px;
 }
+.field__white--bg {
+  border-radius: 30px 0px 0px 30px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
 
 .checkform {
   border-radius: 20px;
@@ -509,7 +514,6 @@ button {
 .footer {
   background-color: #0B153C;
   filter: grayscale(20%);
-  background: url("/assets/img/hero_background.png");
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -530,9 +534,32 @@ button {
   gap: 10px;
 }
 
-.prevention__symptom--wrapper {
-  border-radius: 10px;
-  background: rgba(196, 196, 196, 0.2);
+.quote__backbg {
+  border-radius: 50px;
+  background: rgba(196, 196, 196, 0.15);
+}
+.quote__frontbg {
+  border-radius: 50px;
+  background: #17C2EC;
+}
+
+.symptom__item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.symptom__item figure {
+  margin: 0;
+  max-width: 140px;
+  position: absolute;
+  left: -45px;
+}
+.symptom__item img {
+  width: 100%;
+}
+.symptom__item--text {
+  border: 1px solid red;
+  padding: 10px 60px 10px 80px;
 }
 
 /*# sourceMappingURL=style.css.map */

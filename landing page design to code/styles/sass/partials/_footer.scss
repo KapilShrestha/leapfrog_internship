@@ -33,3 +33,16 @@
     }
     
 }
+
+
+
+.quote{
+    &__backbg{
+        border-radius: 50px;
+        background: rgba(196, 196, 196, 0.15); 
+    }
+    &__frontbg{
+        border-radius: 50px;
+        background: $blue;
+    }
+}
