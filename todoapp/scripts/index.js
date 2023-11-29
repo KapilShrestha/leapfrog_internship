@@ -22,22 +22,21 @@ function addTask() {
     checkBox.addEventListener('change', function() {
       if (checkBox.checked) {
         document.getElementById('task-fields-completed').appendChild(li)
-      } else {
-        document.getElementById('task-fields-remaining').removeChild(li)
+      } 
+      else {
+        document.getElementById('task-fields-completed').removeChild(li)
+        document.getElementById('task-fields-remaining').appendChild(li)
       }
     });
     
     console.log(checkBox)
 
-    taskFieldContainer.appendChild(li);
-    taskFieldRemaining.appendChild(li);
-
     // Insert the new li before the first child of taskFieldContainer
-    // if (taskFieldContainer.firstChild) {
-    //   taskFieldContainer.insertBefore(li, taskFieldContainer.firstChild);
-    // } else {
-    //   taskFieldContainer.appendChild(li);
-    // }
+    if (taskFieldContainer.firstChild) {
+      taskFieldContainer.insertBefore(li, taskFieldContainer.firstChild);
+    } else {
+      taskFieldContainer.appendChild(li);
+    }
 
     inputBox.value = "";
   }
