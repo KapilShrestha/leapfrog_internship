@@ -1,5 +1,6 @@
 const inputBox = document.getElementById("input-box");
 const taskFieldContainer = document.getElementById("task-fields-container");
+const taskFieldRemaining = document.getElementById("task-fields-remaining");
 
 function addTask() {
   if (inputBox.value === '') {
@@ -28,12 +29,15 @@ function addTask() {
     
     console.log(checkBox)
 
+    taskFieldContainer.appendChild(li);
+    taskFieldRemaining.appendChild(li);
+
     // Insert the new li before the first child of taskFieldContainer
-    if (taskFieldContainer.firstChild) {
-      taskFieldContainer.insertBefore(li, taskFieldContainer.firstChild);
-    } else {
-      taskFieldContainer.appendChild(li);
-    }
+    // if (taskFieldContainer.firstChild) {
+    //   taskFieldContainer.insertBefore(li, taskFieldContainer.firstChild);
+    // } else {
+    //   taskFieldContainer.appendChild(li);
+    // }
 
     inputBox.value = "";
   }
