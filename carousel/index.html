@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <title>Image Carousel</title>
+</head>
+<body>
+ <div class="slideshowContainer">
+
+    <div class="slide fade">
+      <img src="assets/img/image1.jpg" alt="image1" />
+    </div>
+    
+    <div class="slide fade">
+      <img src="assets/img/image2.jpg" alt="image1" />
+    </div>
+    
+    <div class="slide fade">
+      <img src="assets/img/image3.jpg" alt="image1" />
+    </div>
+    
+    <div class="slide fade">
+      <img src="assets/img/image4.jpg" alt="image1" />  
+    </div>
+    <div class="slide fade">
+      <img src="assets/img/image5.jpg" alt="image1" />  
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+      <span class="dot" onclick="currentSlide(4)"></span> 
+      <span class="dot" onclick="currentSlide(5)"></span> 
+    </div>      
+    
+  <script type="text/javascript" src="scripts/index.js"></script>
+</body>
