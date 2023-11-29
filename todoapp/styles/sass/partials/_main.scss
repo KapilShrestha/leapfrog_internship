@@ -42,7 +42,14 @@
 
 }
 
-
+.list__div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    
+}
 
 
 input:focus::-webkit-input-placeholder {

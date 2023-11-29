@@ -66,6 +66,14 @@
   width: 150px;
 }
 
+.list__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
 input:focus::-webkit-input-placeholder {
   color: transparent;
   border-color: rgb(58, 222, 255);
@@ -117,6 +125,22 @@ ul li {
 .circular-checkbox:checked {
   background-color: #008000;
   border: 2px solid #008000;
+}
+
+.task__fields__container, .task__fields__completed, .task__fields__remaining {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+#task-fields-completed {
+  background: green;
+}
+
+#task-fields-remaining {
+  background: red;
 }
 
 /*# sourceMappingURL=style.css.map */

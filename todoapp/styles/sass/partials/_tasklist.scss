@@ -35,4 +35,28 @@ ul{
     background-color: #008000;
     border: 2px solid #008000;
   }
+
+ .task__fields{
+    &__container,
+    &__completed,
+    &__remaining{
+        display: none;
+
+    }
+
+ }
+ 
+  .active{
+    display: block;
+  }
+
+
+  #task-fields-completed{
+    background: green;
+    // width:100vw;
+  }
+  #task-fields-remaining{
+    background: red;
+  }
   
+
