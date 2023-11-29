@@ -1,12 +1,18 @@
-.task__wrapper{
-    background-color: $blue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 0 20px 20px;
-    height: 100%;
-    width: inherit;
+.task{
+    &__wrapper{
+        background-color: $blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0 20px 20px;
+        height: 100%;
+        width: inherit;
+    }
+   
+
 }
+
+
 
 
 ul{
@@ -19,9 +25,8 @@ ul{
 .circular__checkbox {
     width: 20px;
     height: 20px;
-    border-radius: 50%;
+    border-radius: 20px;
     border: 2px solid black;
-    // outline: none;
     cursor: pointer;
   }
   

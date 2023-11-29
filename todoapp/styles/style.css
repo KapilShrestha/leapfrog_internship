@@ -108,7 +108,7 @@ ul li {
 .circular__checkbox {
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  border-radius: 20px;
   border: 2px solid black;
   cursor: pointer;
 }

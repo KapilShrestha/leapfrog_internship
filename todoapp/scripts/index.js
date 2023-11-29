@@ -8,15 +8,17 @@ function addTask() {
 
     let li = document.createElement("li");
 
+    
+    
+    
+    
+    li.textContent = inputBox.value;
+    
     let checkBox = document.createElement('input');
     checkBox.type = 'checkbox';
     checkBox.className= 'circular__checkbox';
     li.appendChild(checkBox);
-
-
-
-
-    li.textContent = inputBox.value;
+    console.log(li)
 
     // Insert the new li before the first child of taskFieldContainer
     if (taskFieldContainer.firstChild) {
