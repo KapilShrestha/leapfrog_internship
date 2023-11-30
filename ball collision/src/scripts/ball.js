@@ -46,7 +46,7 @@ export class Ball{
                     this.dy = otherBall.dy
                     otherBall.dx = tempDx
                     otherBall.dy = tempDy
-                    ctx.fillStyle= constants.COLORS[Math.round(Math.random()*10)]
+                    ctx.fillStyle= constants.COLORS[Math.round(Math.random()*50)]
                 }
 
             }
