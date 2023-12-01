@@ -4,7 +4,7 @@ export const ctx=canvas.getContext("2d")
 // var heightRatio = 0.5;
 // canvas.height = canvas.width * heightRatio;
 
-export const numberBall = 25
+export const numberBall = 35
 export const RADIUS = 5;
 export const COLORS = [
   '#FF0000', '#FF3333', '#FF6666', '#FF9999', '#FFCCCC', '#FF4D4D', '#FF8080', '#FFB2B2', '#FFD9D9', '#FFE6E6',
