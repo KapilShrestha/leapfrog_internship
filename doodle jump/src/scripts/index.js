@@ -111,13 +111,13 @@ function update(){
 
     // for score
 
-    updateScore()
-    context.fillStyle = "black";
-    context.font = " 16 px sans-serif"
-    context.fillText(score, 5 , 20)
+//     updateScore()
+//     context.fillStyle = "black";
+//     context.font = " 16 px sans-serif"
+//     context.fillText(score, 5 , 20)
     
 
-}
+// }
 
 function moveDoodler(pressed){
     if (pressed.code == "ArrowRight" || pressed.code == "KeyD") {// to move right 
