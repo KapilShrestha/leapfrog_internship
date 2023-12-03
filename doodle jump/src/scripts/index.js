@@ -64,7 +64,7 @@ window.onload = function(){
 
     
     platformImg = new Image();
-    platformImg.src = "/src/img/platform.png"
+    platformImg.src = "./src/img/platform.png"
 
     velocityY = initialVelocityY
     
