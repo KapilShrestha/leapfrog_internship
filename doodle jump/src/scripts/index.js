@@ -1,3 +1,6 @@
+// const canvas = document.getElementById("board");
+// const ctx = canvas.getContext("2d");
+
 let board;
 let boardWidth = 360;
 let boardHeight = 576;
@@ -50,14 +53,14 @@ window.onload = function(){
 
     // load doodler images
     doodlerRightImg =  new Image();
-    doodlerRightImg.src = "/src/img/doodler-right.png"
+    doodlerRightImg.src = "./src/img/doodler-right.png"
     doodler.img = doodlerRightImg
     doodlerRightImg.onload = function(){
         context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height)
     }
 
     doodlerLeftImg = new Image();
-    doodlerLeftImg.src = "/src/img/doodler-left.png"
+    doodlerLeftImg.src = "./src/img/doodler-left.png"
 
     
     platformImg = new Image();
@@ -107,17 +110,9 @@ function update(){
     while(platformArray.length > 0 && platformArray[0].y >= boardHeight){
         platformArray.shift() //removes first element 
         newPlatform()
-    }
+    }    
 
-    // for score
-
-//     updateScore()
-//     context.fillStyle = "black";
-//     context.font = " 16 px sans-serif"
-//     context.fillText(score, 5 , 20)
-    
-
-// }
+}
 
 function moveDoodler(pressed){
     if (pressed.code == "ArrowRight" || pressed.code == "KeyD") {// to move right 
@@ -127,7 +122,6 @@ function moveDoodler(pressed){
     else if (pressed.code == "ArrowLeft" || pressed.code == "KeyA"){
         velocityX = -2
         doodler.img = doodlerLeftImg
-
     }
 
 }
@@ -186,7 +180,3 @@ function detectCollision(doodler, platform){
 }
 
 
-// function updateScore(){
-//     let points = Math.floor(50*Math.random())
-//     score+=points
-// }
