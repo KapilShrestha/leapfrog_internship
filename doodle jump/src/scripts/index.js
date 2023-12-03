@@ -34,7 +34,7 @@ let gravity = 0.4
 // platforms
 let platformArray = [];
 let platformWidth = 70;
-let platformHeight = 18;
+let platformHeight = 30;
 let platformImg
 
 
