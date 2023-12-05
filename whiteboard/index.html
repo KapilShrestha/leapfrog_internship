@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/style.css">
+    <title>whiteboard</title>
+</head>
+<body>
+    <section class="container">
+        <div id="toolbar">
+            <h1>Draw</h1>
+            <label for="stroke">Stroke</label>
+            <input id="stroke" name="stroke" type="color">
+
+            <label for="linewidth">Line Width</label>
+            <input type="number" name="linewidth" id="linewidth" value="5">
+            <button id="clear">Clear</button>
+        </div>
+
+        <div class="drawing-board">
+            <canvas id="drawing-board"></canvas>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <script type="module" src="./src/scripts/index.js"></script>    
+</body>
+</html>
