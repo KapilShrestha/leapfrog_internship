@@ -42,9 +42,6 @@ const draw = (e) => {
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
 
-    // ctx.lineTo(e.clientX - canvasOffsetX, e.clientY);
-    // ctx.stroke();
-
     ctx.beginPath();
     ctx.moveTo(startX - canvasOffsetX, startY - canvasOffsetY);
     ctx.bezierCurveTo(
@@ -76,6 +73,18 @@ canvas.addEventListener('mouseup', e => {
     ctx.beginPath();
     
 });
+
+let isErasing = false
+let eraserButton = document.getElementById("eraser")
+eraserButton.addEventListener("click", function() {
+    isErasing = !isErasing;
+    if (isErasing) {
+      eraserButton.style.backgroundColor = "red";
+    }
+    else {
+      eraserButton.style.backgroundColor = "blue";
+    }
+  });
 
 canvas.addEventListener('mousemove', draw);
 
