@@ -10,27 +10,25 @@ canvas.height = window.innerHeight - canvasOffsetY;
 
 let isPainting = false;
 let lineWidthInput = document.getElementById('linewidth'); // Updated to capture the input element
-let lineWidth = parseInt(lineWidthInput.value);
+let lineWidth = parseInt(lineWidthInput.value); // Initial line width
 
 let startX;
 let startY;
 
-const curves = [];
-
 toolbar.addEventListener('click', e => {
-    if (e.target.id === 'clear') {
+    if(e.target.id === 'clear') {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 });
 
 toolbar.addEventListener('change', e => {
-    if(e.target.id === 'color-picker') {
+    if(e.target.id === 'stroke') {
         ctx.strokeStyle = e.target.value;
     }
 
     if(e.target.id === 'linewidth') {
-        lineWidth = parseInt(e.target.value);
-    }  
+        lineWidth = parseInt(e.target.value); // Update line width when input changes
+    }
 });
 
 const draw = (e) => {
@@ -38,30 +36,11 @@ const draw = (e) => {
         return;
     }
 
-    ctx.lineWidth = lineWidth;
-    ctx.lineJoin = 'round';
+    ctx.lineWidth = lineWidth; // Use the updated line width
     ctx.lineCap = 'round';
 
-    // ctx.lineTo(e.clientX - canvasOffsetX, e.clientY);
-    // ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(startX - canvasOffsetX, startY - canvasOffsetY);
-    ctx.bezierCurveTo(
-        startX - canvasOffsetX + 0.25, startY - canvasOffsetY + 0.25,
-        e.clientX - canvasOffsetX - 0.25, e.clientY - canvasOffsetY - 0.25,
-        e.clientX - canvasOffsetX, e.clientY - canvasOffsetY
-    );
+    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY);
     ctx.stroke();
-    curves.push({
-        startX: startX - canvasOffsetX,
-        startY: startY - canvasOffsetY,
-        endX: e.clientX - canvasOffsetX,
-        endY: e.clientY - canvasOffsetY
-    });
-
-    startX = e.clientX;
-    startY = e.clientY;
 }
 
 canvas.addEventListener('mousedown', (e) => {
@@ -74,9 +53,6 @@ canvas.addEventListener('mouseup', e => {
     isPainting = false;
     ctx.stroke();
     ctx.beginPath();
-    
 });
 
 canvas.addEventListener('mousemove', draw);
-
-

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Drawing and Selection</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            border: 1px solid #000;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #toolbar {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="drawing-board"></canvas>
+    <div id="toolbar">
+        <input id="linewidth" type="number" value="5">
+        <input id="stroke" type="color" value="#000000">
+        <button id="clear">Clear</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('drawing-board');
+        const toolbar = document.getElementById('toolbar');
+        const ctx = canvas.getContext('2d');
+
+        const canvasOffsetX = canvas.offsetLeft;
+        const canvasOffsetY = canvas.offsetTop;
+
+        canvas.width = window.innerWidth - canvasOffsetX;
+        canvas.height = window.innerHeight - canvasOffsetY;
+
+        let isPainting = false;
+        let lineWidthInput = document.getElementById('linewidth');
+        let lineWidth = parseInt(lineWidthInput.value);
+
+        let startX;
+        let startY;
+
+        const curves = [];
+
+        toolbar.addEventListener('click', e => {
+            if (e.target.id === 'clear') {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                curves.length = 0;
+            }
+        });
+
+        toolbar.addEventListener('change', e => {
+            if (e.target.id === 'stroke') {
+                ctx.strokeStyle = e.target.value;
+            }
+
+            if (e.target.id === 'linewidth') {
+                lineWidth = parseInt(e.target.value);
+            }
+        });
+
+        const draw = (e) => {
+            if (!isPainting) {
+                return;
+            }
+
+            ctx.lineWidth = lineWidth;
+            ctx.lineJoin = 'round';
+            ctx.lineCap = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(startX - canvasOffsetX, startY - canvasOffsetY);
+            ctx.bezierCurveTo(
+                startX - canvasOffsetX + 0.25, startY - canvasOffsetY + 0.25,
+                e.clientX - canvasOffsetX - 0.25, e.clientY - canvasOffsetY - 0.25,
+                e.clientX - canvasOffsetX, e.clientY - canvasOffsetY
+            );
+            ctx.stroke();
+
+            curves.push({
+                startX: startX - canvasOffsetX,
+                startY: startY - canvasOffsetY,
+                endX: e.clientX - canvasOffsetX,
+                endY: e.clientY - canvasOffsetY
+            });
+
+            startX = e.clientX;
+            startY = e.clientY;
+        }
+
+        canvas.addEventListener('mousedown', (e) => {
+            isPainting = true;
+            startX = e.clientX;
+            startY = e.clientY;
+        });
+
+        canvas.addEventListener('mouseup', e => {
+            isPainting = false;
+            ctx.stroke();
+            ctx.beginPath();
+        });
+
+        function isPointInsideBoundingBox(pointX, pointY, box) {
+            return (
+                pointX >= box.startX &&
+                pointX <= box.endX &&
+                pointY >= box.startY &&
+                pointY <= box.endY
+            );
+        }
+
+        function handleSelection(x, y) {
+            for (let i = curves.length - 1; i >= 0; i--) {
+                const curve = curves[i];
+                if (isPointInsideBoundingBox(x, y, curve)) {
+                    console.log('Curve selected:', curve);
+                    drawSelectionBoundary(curve);
+                    break;
+                }
+            }
+        }
+
+        function drawSelectionBoundary(curve) {
+            const padding = 100; // Adjust padding for the boundary
+
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = 'pink'; // Set color for the boundary
+            ctx.strokeRect(
+                curve.startX - padding,
+                curve.startY - padding,
+                curve.endX - curve.startX + (padding * 2),
+                curve.endY - curve.startY + (padding * 2)
+            );
+        }
+
+        canvas.addEventListener('dblclick', (e) => {
+            const clickX = e.clientX - canvasOffsetX;
+            const clickY = e.clientY - canvasOffsetY;
+            handleSelection(clickX, clickY);
+        });
+
+        canvas.addEventListener('mousemove', draw);
+    </script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+// import * as constants from './constants.js'
 const canvas = document.getElementById('drawing-board');
 const toolbar = document.getElementById('toolbar');
 const ctx = canvas.getContext('2d');
@@ -9,13 +10,11 @@ canvas.width = window.innerWidth - canvasOffsetX;
 canvas.height = window.innerHeight - canvasOffsetY;
 
 let isPainting = false;
-let lineWidthInput = document.getElementById('linewidth'); // Updated to capture the input element
+let lineWidthInput = document.getElementById('linewidth');
 let lineWidth = parseInt(lineWidthInput.value);
 
 let startX;
 let startY;
-
-const curves = [];
 
 toolbar.addEventListener('click', e => {
     if (e.target.id === 'clear') {
@@ -24,17 +23,17 @@ toolbar.addEventListener('click', e => {
 });
 
 toolbar.addEventListener('change', e => {
-    if(e.target.id === 'color-picker') {
+    if(e.target.id === 'stroke') {
         ctx.strokeStyle = e.target.value;
     }
 
     if(e.target.id === 'linewidth') {
         lineWidth = parseInt(e.target.value);
-    }  
+    }
 });
 
 const draw = (e) => {
-    if(!isPainting) {
+    if (!isPainting) {
         return;
     }
 
@@ -42,23 +41,14 @@ const draw = (e) => {
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
 
-    // ctx.lineTo(e.clientX - canvasOffsetX, e.clientY);
-    // ctx.stroke();
-
     ctx.beginPath();
     ctx.moveTo(startX - canvasOffsetX, startY - canvasOffsetY);
     ctx.bezierCurveTo(
-        startX - canvasOffsetX + 0.25, startY - canvasOffsetY + 0.25,
-        e.clientX - canvasOffsetX - 0.25, e.clientY - canvasOffsetY - 0.25,
+        startX - canvasOffsetX + 50, startY - canvasOffsetY + 50,
+        e.clientX - canvasOffsetX - 50, e.clientY - canvasOffsetY - 50,
         e.clientX - canvasOffsetX, e.clientY - canvasOffsetY
     );
     ctx.stroke();
-    curves.push({
-        startX: startX - canvasOffsetX,
-        startY: startY - canvasOffsetY,
-        endX: e.clientX - canvasOffsetX,
-        endY: e.clientY - canvasOffsetY
-    });
 
     startX = e.clientX;
     startY = e.clientY;
@@ -74,9 +64,6 @@ canvas.addEventListener('mouseup', e => {
     isPainting = false;
     ctx.stroke();
     ctx.beginPath();
-    
 });
 
 canvas.addEventListener('mousemove', draw);
-
-
