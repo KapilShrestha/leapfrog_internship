@@ -3,7 +3,6 @@ body{
     padding: 0;
     height: 100%;
     overflow: hidden;
-    /* color: white; */
     background-color: white;
 }
 
@@ -20,7 +19,6 @@ body{
     padding: 5px;
     width: 70px;
     height: 100vh;
-    /* background-color: black; */
 }
 
 #toolbar *{
@@ -38,14 +36,4 @@ body{
     border-radius: 4px;
     color: white;
     padding: 2px;
-}
-
-input[type=color] {
-    /* Hide the default appearance */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-
-    /* Optional: Hide the type indicator arrow */
-    background-image: none;
 }

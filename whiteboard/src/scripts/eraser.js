@@ -19,7 +19,7 @@ toolbar.addEventListener('click', (e) => {
   }
 });
 
-const erase = (e) => {
+export const erase = (e) => {
   if (isErasing) {
     const startX = e.clientX - canvasOffsetX;
     const startY = e.clientY - canvasOffsetY;
