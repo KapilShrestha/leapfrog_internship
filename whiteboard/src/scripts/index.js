@@ -9,6 +9,7 @@ canvas.width = window.innerWidth - canvasOffsetX;
 canvas.height = window.innerHeight - canvasOffsetY;
 
 let isPainting = false;
+let isErasing = false
 let lineWidthInput = document.getElementById('linewidth'); // Updated to capture the input element
 let lineWidth = parseInt(lineWidthInput.value);
 
@@ -42,6 +43,7 @@ const draw = (e) => {
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
 
+
     ctx.beginPath();
     ctx.moveTo(startX - canvasOffsetX, startY - canvasOffsetY);
     ctx.bezierCurveTo(
@@ -50,13 +52,13 @@ const draw = (e) => {
         e.clientX - canvasOffsetX, e.clientY - canvasOffsetY
     );
     ctx.stroke();
+
     curves.push({
         startX: startX - canvasOffsetX,
         startY: startY - canvasOffsetY,
         endX: e.clientX - canvasOffsetX,
         endY: e.clientY - canvasOffsetY
-    });
-
+    }); 
     startX = e.clientX;
     startY = e.clientY;
 }
@@ -74,16 +76,19 @@ canvas.addEventListener('mouseup', e => {
     
 });
 
-let isErasing = false
+
 let eraserButton = document.getElementById("eraser")
 eraserButton.addEventListener("click", function() {
     isErasing = !isErasing;
     if (isErasing) {
-      eraserButton.style.backgroundColor = "red";
+        eraserButton.style.backgroundColor = "red";
+        // erase();
+
     }
     else {
       eraserButton.style.backgroundColor = "blue";
     }
+    
   });
 
 canvas.addEventListener('mousemove', draw);
