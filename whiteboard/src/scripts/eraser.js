@@ -24,7 +24,7 @@ const erase = (e) => {
     const startX = e.clientX - canvasOffsetX;
     const startY = e.clientY - canvasOffsetY;
 
-    ctx.lineWidth = 5; // Set a fixed width for the eraser
+    ctx.lineWidth = 25; // Set a fixed width for the eraser
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
 
