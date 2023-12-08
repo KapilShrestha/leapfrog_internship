@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" stroke="#595959">
+  <!-- First section filled with red color -->
+  <rect x="8" y="3" width="4" height="18" rx="2" ry="2" fill="#00a676" />
+  
+  <!-- Second section filled with blue color -->
+  <rect x="12" y="3" width="4" height="18" rx="2" ry="2" fill="#aad922" />
+</svg>

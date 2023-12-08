@@ -1,0 +1,38 @@
+$color_1: white;
+$background-color_1: white;
+$background-color_2: blue;
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
+	background-color: $background-color_1;
+}
+.container {
+	height: 100%;
+	display: flex;
+}
+#toolbar {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	justify-content: center;
+	padding: 5px;
+	width: 70px;
+	height: 100vh;
+	* {
+		margin-bottom: 6px;
+	}
+	label {
+		display: none;
+		font-size: 12px;
+	}
+	// button {
+	// 	background-color: $background-color_2;
+	// 	border: none;
+	// 	border-radius: 4px;
+	// 	color: $color_1;
+	// 	padding: 2px;
+	// }
+}

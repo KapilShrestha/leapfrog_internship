@@ -11,6 +11,7 @@ canvas.height = window.innerHeight - canvasOffsetY;
 
 let isPainting = false;
 let isErasing = false;
+let isPenActive = false;
 
 let lineWidthInput = document.getElementById("linewidth");
 let lineWidth = parseInt(lineWidthInput.value);
@@ -45,8 +46,6 @@ const draw = (e) => {
     return;
   }
   if (isErasing) {
-    console.log("erasing");
-    console.log();
     ctx.globalCompositeOperation = "destination-out"; // Set the composite operation for erasing
     ctx.beginPath();
     ctx.arc(
@@ -87,7 +86,7 @@ const draw = (e) => {
 };
 
 function startDraw(e) {
-  console.log("Drawing started");
+  if(!isPenActive && !isErasing) return
   isPainting = true;
   startX = e.clientX;
   startY = e.clientY;
@@ -99,6 +98,7 @@ function startDraw(e) {
 }
 
 function endDraw(e) {
+  if(!isPenActive && !isErasing) return
   isPainting = false;
   curves.push(currentCurve);
   console.log(curves);
@@ -133,23 +133,32 @@ function redrawCanvas() {
   });
 }
 
+const penTool = document.getElementById("pen")
+
+penTool.addEventListener("click", function(e){
+  e.stopPropagation()
+  isPenActive = !isPenActive
+})
+
 eraserButton.addEventListener("click", function () {
   isErasing = !isErasing;
   if (isErasing) {
     eraserButton.style.backgroundColor = "red";
-    canvas.onwheel = (e) =>{
-        console.log(e)
-        if(e.deltaY>=0){
-            lineWidth = lineWidth - 5
-            lineWidthInput.value = parseInt(lineWidthInput.value)-5
-        }
-        else{
-            lineWidth = lineWidth + 5
-            lineWidthInput.value = parseInt(lineWidthInput.value)+5
-        }
     
-    }
   } else {
     eraserButton.style.backgroundColor = "blue";
   }
 });
+
+canvas.onwheel = (e) =>{
+  console.log(e)
+  if(e.deltaY>=0){
+      lineWidth = lineWidth - 5
+      lineWidthInput.value = parseInt(lineWidthInput.value)-5
+  }
+  else{
+      lineWidth = lineWidth + 5
+      lineWidthInput.value = parseInt(lineWidthInput.value)+5
+  }
+
+}
