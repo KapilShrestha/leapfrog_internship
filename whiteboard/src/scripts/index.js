@@ -17,8 +17,7 @@ let isPenActive = true;
 // let lineWidthInput = document.getElementById("linewidth");
 // let lineWidth = parseInt(lineWidthInput.value);
 
-let lineWidth  = 5;
-
+let lineWidth = 5;
 
 let startX;
 let startY;
@@ -90,7 +89,7 @@ const draw = (e) => {
 };
 
 function startDraw(e) {
-  if(!isPenActive && !isErasing) return
+  if (!isPenActive && !isErasing) return;
   isPainting = true;
   startX = e.clientX;
   startY = e.clientY;
@@ -102,19 +101,20 @@ function startDraw(e) {
 }
 
 function endDraw(e) {
-  if(!isPenActive && !isErasing) return
+  if (!isPenActive && !isErasing) return;
   isPainting = false;
   curves.push(currentCurve);
   console.log(curves);
 }
 
 canvas.addEventListener("mousedown", startDraw);
-canvas.addEventListener("mouseup", endDraw);
+// canvas.addEventListener("pointerdown", startDraw);
 canvas.addEventListener("mousemove", draw);
+// canvas.addEventListener("pointermove", draw);
+canvas.addEventListener("mouseup", endDraw);
+// canvas.addEventListener("pointerup", endDraw);
 
-
-
-// to remove last drawn element 
+// to remove last drawn element
 document.addEventListener("keydown", (event) => {
   if (event.ctrlKey && event.key === "z") {
     event.preventDefault();
@@ -140,35 +140,35 @@ function redrawCanvas() {
   });
 }
 
-
-
-penTool.addEventListener("click", function(e){
-  e.stopPropagation()
-  if(isPenActive){
+penTool.addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (isPenActive) {
     isErasing = false;
-    return
+    return;
   }
-  isPenActive = !isPenActive
-  
-})
+  isPenActive = !isPenActive;
+});
 
 eraserButton.addEventListener("click", function () {
-  if(isErasing){
-    isPenActive = false
-    return
+  lineWidth = 20;
+  if (isErasing) {
+    isPenActive = false;
+    return;
   }
   isErasing = !isErasing;
 });
 
-canvas.onwheel = (e) =>{
-  console.log(e)
-  if(e.deltaY>=0){
-      lineWidth = lineWidth - 5
-      lineWidthInput.value = parseInt(lineWidthInput.value)-5
-  }
-  else{
-      lineWidth = lineWidth + 5
-      lineWidthInput.value = parseInt(lineWidthInput.value)+5
-  }
 
-}
+// change the linewidth using mouse scroll wheel
+canvas.onwheel = (e) => {
+  console.log(e);
+  if (e.deltaY >= 0) {
+    lineWidth = Math.max(1, lineWidth - 5);
+    // lineWidth = lineWidth - 5
+    // lineWidthInput.value = parseInt(lineWidthInput.value)-5
+  } else {
+    lineWidth = Math.min(80, lineWidth + 5);
+    // lineWidth = lineWidth + 5;
+    // lineWidthInput.value = parseInt(lineWidthInput.value)+5
+  }
+};
