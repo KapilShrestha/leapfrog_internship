@@ -36,6 +36,7 @@ toolbar.addEventListener("click", (e) => {
 
 toolbar.addEventListener("change", (e) => {
   if (e.target.id === "color-picker") {
+    isErasing = false;
     ctx.strokeStyle = e.target.value;
   }
 
@@ -111,6 +112,9 @@ canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mouseup", endDraw);
 canvas.addEventListener("mousemove", draw);
 
+
+
+// to remove last drawn element 
 document.addEventListener("keydown", (event) => {
   if (event.ctrlKey && event.key === "z") {
     event.preventDefault();
@@ -139,13 +143,11 @@ function redrawCanvas() {
 
 
 penTool.addEventListener("click", function(e){
-  // console.log(penTool)
   e.stopPropagation()
   if(isPenActive){
     isErasing = false;
     return
   }
-  console.log("pentool")
   isPenActive = !isPenActive
   
 })
@@ -155,16 +157,7 @@ eraserButton.addEventListener("click", function () {
     isPenActive = false
     return
   }
-  console.log("eraserButton")
   isErasing = !isErasing;
-
-  // console.log(eraserButton)
-  // if (isErasing) {
-  //   eraserButton.style.backgroundColor = "red";
-    
-  // } else {
-  //   eraserButton.style.backgroundColor = "blue";
-  // }
 });
 
 canvas.onwheel = (e) =>{
