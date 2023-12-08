@@ -108,11 +108,11 @@ function endDraw(e) {
 }
 
 canvas.addEventListener("mousedown", startDraw);
-// canvas.addEventListener("pointerdown", startDraw);
+canvas.addEventListener("touchstart", startDraw);
 canvas.addEventListener("mousemove", draw);
-// canvas.addEventListener("pointermove", draw);
+canvas.addEventListener("touchmove", draw);
 canvas.addEventListener("mouseup", endDraw);
-// canvas.addEventListener("pointerup", endDraw);
+canvas.addEventListener("touchend", endDraw);
 
 // to remove last drawn element
 document.addEventListener("keydown", (event) => {
@@ -150,7 +150,7 @@ penTool.addEventListener("click", function (e) {
 });
 
 eraserButton.addEventListener("click", function () {
-  lineWidth = 20;
+  lineWidth += 20; //makes the eraser more wider than the current lineWidth
   if (isErasing) {
     isPenActive = false;
     return;
