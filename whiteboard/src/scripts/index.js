@@ -2,6 +2,7 @@ const canvas = document.getElementById("drawing-board");
 const toolbar = document.getElementById("toolbar");
 const ctx = canvas.getContext("2d");
 let eraserButton = document.getElementById("eraser");
+const penTool = document.getElementById("pen");
 
 const canvasOffsetX = canvas.offsetLeft;
 const canvasOffsetY = canvas.offsetTop;
@@ -11,10 +12,12 @@ canvas.height = window.innerHeight - canvasOffsetY;
 
 let isPainting = false;
 let isErasing = false;
-let isPenActive = false;
+let isPenActive = true;
 
-let lineWidthInput = document.getElementById("linewidth");
-let lineWidth = parseInt(lineWidthInput.value);
+// let lineWidthInput = document.getElementById("linewidth");
+// let lineWidth = parseInt(lineWidthInput.value);
+
+let lineWidth  = 5;
 
 
 let startX;
@@ -133,21 +136,35 @@ function redrawCanvas() {
   });
 }
 
-const penTool = document.getElementById("pen")
+
 
 penTool.addEventListener("click", function(e){
+  // console.log(penTool)
   e.stopPropagation()
+  if(isPenActive){
+    isErasing = false;
+    return
+  }
+  console.log("pentool")
   isPenActive = !isPenActive
+  
 })
 
 eraserButton.addEventListener("click", function () {
-  isErasing = !isErasing;
-  if (isErasing) {
-    eraserButton.style.backgroundColor = "red";
-    
-  } else {
-    eraserButton.style.backgroundColor = "blue";
+  if(isErasing){
+    isPenActive = false
+    return
   }
+  console.log("eraserButton")
+  isErasing = !isErasing;
+
+  // console.log(eraserButton)
+  // if (isErasing) {
+  //   eraserButton.style.backgroundColor = "red";
+    
+  // } else {
+  //   eraserButton.style.backgroundColor = "blue";
+  // }
 });
 
 canvas.onwheel = (e) =>{
