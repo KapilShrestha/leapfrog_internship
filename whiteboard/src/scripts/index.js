@@ -4,6 +4,7 @@ const ctx = canvas.getContext("2d");
 let eraserButton = document.getElementById("eraser");
 const penTool = document.getElementById("pen");
 const handTool = document.getElementById("hand");
+const colorPickerTool = document.getElementById("color-picker")
 
 const canvasOffsetX = canvas.offsetLeft;
 const canvasOffsetY = canvas.offsetTop;
@@ -14,9 +15,6 @@ canvas.height = window.innerHeight - canvasOffsetY;
 let isPainting = false;
 let isErasing = false;
 let isPenActive = false;
-
-// let lineWidthInput = document.getElementById("linewidth");
-// let lineWidth = parseInt(lineWidthInput.value);
 
 let lineWidth = 5;
 let eraserWidth = 5;
@@ -37,7 +35,6 @@ toolbar.addEventListener("click", (e) => {
 
 toolbar.addEventListener("change", (e) => {
   if (e.target.id === "color-picker") {
-    isErasing = false;
     ctx.strokeStyle = e.target.value;
   }
 
@@ -108,13 +105,9 @@ function endDraw(e) {
   curves.push(currentCurve);
   console.log(curves);
 }
-
-canvas.addEventListener("mousedown", startDraw);
-canvas.addEventListener("touchstart", startDraw);
-canvas.addEventListener("mousemove", draw);
-canvas.addEventListener("touchmove", draw);
-canvas.addEventListener("mouseup", endDraw);
-canvas.addEventListener("touchend", endDraw);
+  canvas.addEventListener("mousedown", startDraw);
+  canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("mouseup", endDraw);
 
 // to remove last drawn element
 document.addEventListener("keydown", (event) => {
@@ -153,6 +146,17 @@ penTool.addEventListener("click", function (e) {
 
   isPenActive = !isPenActive;
 });
+
+colorPickerTool.addEventListener("click", function(e){
+  document.body.classList.remove("eraser__default");
+    document.body.classList.add("pen__default");
+    isPenActive = true;
+    isErasing = false;
+
+});
+
+
+
 
 eraserButton.addEventListener("click", function () {
   // lineWidth += 20; //makes the eraser more wider than the current lineWidth
