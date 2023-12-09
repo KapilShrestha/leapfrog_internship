@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Cursor</title>
+  <style>
+    body {
+      /* cursor: none; Hide default cursor */
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Style for the custom cursor */
+    .custom-cursor {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: black;
+      position: fixed;
+      pointer-events: none; /* Ensure the cursor doesn't interfere with clicks */
+      z-index: 9999; /* Ensure it appears on top of everything */
+    }
+  </style>
+</head>
+<body>
+  <!-- The dot representing the custom cursor -->
+  <div class="custom-cursor"></div>
+
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      const cursor = document.querySelector('.custom-cursor');
+      cursor.style.top = `${e.clientY}px`;
+      cursor.style.left = `${e.clientX}px`;
+    });
+  </script>
+</body>
+</html>

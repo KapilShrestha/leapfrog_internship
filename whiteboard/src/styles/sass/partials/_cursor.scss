@@ -1,0 +1,21 @@
+.hand{
+    &__default{
+        cursor: all-scroll;
+    }
+    &__select{
+        cursor: grab;
+    }
+}
+
+.pen{
+    &__default{
+        cursor: url("../img/pen.png"), crosshair;
+        // cursor: crosshair;
+    }
+}
+
+.eraser{
+    &__default{
+        cursor: move;
+    }
+}

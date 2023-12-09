@@ -3,6 +3,7 @@ const toolbar = document.getElementById("toolbar");
 const ctx = canvas.getContext("2d");
 let eraserButton = document.getElementById("eraser");
 const penTool = document.getElementById("pen");
+const handTool = document.getElementById("hand");
 
 const canvasOffsetX = canvas.offsetLeft;
 const canvasOffsetY = canvas.offsetTop;
@@ -12,12 +13,13 @@ canvas.height = window.innerHeight - canvasOffsetY;
 
 let isPainting = false;
 let isErasing = false;
-let isPenActive = true;
+let isPenActive = false;
 
 // let lineWidthInput = document.getElementById("linewidth");
 // let lineWidth = parseInt(lineWidthInput.value);
 
 let lineWidth = 5;
+let eraserWidth = 5;
 
 let startX;
 let startY;
@@ -54,7 +56,7 @@ const draw = (e) => {
     ctx.arc(
       e.clientX - canvasOffsetX,
       e.clientY - canvasOffsetY,
-      lineWidth / 2,
+      eraserWidth / 2,
       0,
       Math.PI * 2,
       false
@@ -142,33 +144,61 @@ function redrawCanvas() {
 
 penTool.addEventListener("click", function (e) {
   e.stopPropagation();
+  isErasing = false;
+  document.body.classList.remove("eraser__default");
+  document.body.classList.add("pen__default");
   if (isPenActive) {
-    isErasing = false;
     return;
   }
+
   isPenActive = !isPenActive;
 });
 
 eraserButton.addEventListener("click", function () {
-  lineWidth += 20; //makes the eraser more wider than the current lineWidth
+  // lineWidth += 20; //makes the eraser more wider than the current lineWidth
+  isPenActive = false;
+  document.body.classList.remove("pen__default");
+  document.body.classList.add("eraser__default");
   if (isErasing) {
-    isPenActive = false;
     return;
   }
   isErasing = !isErasing;
 });
 
-
 // change the linewidth using mouse scroll wheel
 canvas.onwheel = (e) => {
-  console.log(e);
-  if (e.deltaY >= 0) {
-    lineWidth = Math.max(1, lineWidth - 5);
-    // lineWidth = lineWidth - 5
-    // lineWidthInput.value = parseInt(lineWidthInput.value)-5
-  } else {
-    lineWidth = Math.min(80, lineWidth + 5);
-    // lineWidth = lineWidth + 5;
-    // lineWidthInput.value = parseInt(lineWidthInput.value)+5
+  if (isPenActive) {
+    console.log(e);
+    if (e.deltaY >= 0) {
+      lineWidth = Math.max(1, lineWidth - 5);
+    } else {
+      lineWidth = Math.min(80, lineWidth + 5);
+    }
+  }
+  if (isErasing) {
+    console.log(e);
+    if (e.deltaY >= 0) {
+      eraserWidth = Math.max(1, eraserWidth - 5);
+    } else {
+      eraserWidth = Math.min(80, eraserWidth + 5);
+    }
   }
 };
+
+// zoom in zoom out
+
+// const container = document.getElementById("container");
+// let scale = 1;
+
+// document.addEventListener("wheel", (e) => {
+//   e.preventDefault(); // Prevent default scrolling behavior
+
+//   // Calculate the new scale based on scroll direction
+//   scale += e.deltaY * -0.01;
+
+//   // Limit scale to avoid zooming too much in or out
+//   scale = Math.min(Math.max(0.5, scale), 3);
+
+//   // Apply the scale transformation to the container
+//   container.style.transform = `scale(${scale})`;
+// });

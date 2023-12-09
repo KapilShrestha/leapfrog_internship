@@ -165,6 +165,10 @@ body {
   visibility: visible !important;
 }
 
+.li-6:hover .name {
+  visibility: visible !important;
+}
+
 button {
   background-color: Transparent;
   background-repeat: no-repeat;
@@ -177,6 +181,21 @@ button {
 #color-picker {
   position: absolute;
   visibility: hidden;
+}
+
+.hand__default {
+  cursor: all-scroll;
+}
+.hand__select {
+  cursor: grab;
+}
+
+.pen__default {
+  cursor: url("../img/pen.png"), crosshair;
+}
+
+.eraser__default {
+  cursor: move;
 }
 
 /*# sourceMappingURL=style.css.map */
