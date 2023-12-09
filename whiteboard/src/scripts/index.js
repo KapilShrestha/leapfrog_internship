@@ -51,6 +51,12 @@ const draw = (e) => {
   if (!isPainting) {
     return;
   }
+  e.preventDefault(); // Prevent default behavior for touch events
+
+  // Determine the event type (mouse or touch) and get the appropriate coordinates
+  const clientX = e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
+  const clientY = e.type === "touchmove" ? e.touches[0].clientY : e.clientY;
+  
   if (isErasing) {
     ctx.globalCompositeOperation = "destination-out"; // Set the composite operation for erasing
     ctx.beginPath();
@@ -92,8 +98,12 @@ const draw = (e) => {
 };
 
 function startDraw(e) {
+  e.preventDefault();
   if (!isPenActive && !isErasing) return;
   isPainting = true;
+   // Determine the event type (mouse or touch) and get the appropriate coordinates
+   const clientX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
+   const clientY = e.type === "touchstart" ? e.touches[0].clientY : e.clientY;
   startX = e.clientX;
   startY = e.clientY;
   currentCurve = [];
