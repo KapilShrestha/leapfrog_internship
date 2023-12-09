@@ -110,8 +110,11 @@ function endDraw(e) {
   console.log(curves);
 }
   canvas.addEventListener("mousedown", startDraw);
+  canvas.addEventListener("touchstart", startDraw);
   canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("touchmove", draw);
   canvas.addEventListener("mouseup", endDraw);
+  canvas.addEventListener("touchend", endDraw);
 
 // to remove last drawn element
 document.addEventListener("keydown", (event) => {

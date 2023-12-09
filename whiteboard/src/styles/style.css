@@ -3,7 +3,7 @@ body {
   padding: 0;
   height: 100%;
   overflow: hidden;
-  background-color: white; 
+  background-color: white;
 }
 
 .container {
@@ -166,6 +166,10 @@ body {
 }
 
 .li-6:hover .name {
+  visibility: visible !important;
+}
+
+.li-7:hover .name {
   visibility: visible !important;
 }
 
