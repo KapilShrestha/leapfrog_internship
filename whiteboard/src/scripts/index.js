@@ -26,6 +26,10 @@ let currentCurve = []; // To store points of the current curve
 
 const curves = []; // To store all curves drawn
 
+ctx.fillStyle = 'white';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
 toolbar.addEventListener("click", (e) => {
   if (e.target.id === "clear") {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -189,20 +193,23 @@ canvas.onwheel = (e) => {
   }
 };
 
-// zoom in zoom out
 
-// const container = document.getElementById("container");
-// let scale = 1;
+// to save the canvas in png format
+function saveCanvas() {
+  // Convert the canvas content to an image data URL
+  const dataURL = canvas.toDataURL('image/png');
 
-// document.addEventListener("wheel", (e) => {
-//   e.preventDefault(); // Prevent default scrolling behavior
+  // Create a temporary link element
+  const link = document.createElement('a');
+  link.download = 'canvas_image.png'; // Set the file name
+  link.href = dataURL; // Set the data URL as the href attribute
 
-//   // Calculate the new scale based on scroll direction
-//   scale += e.deltaY * -0.01;
+  // Append the link to the body
+  document.body.appendChild(link);
 
-//   // Limit scale to avoid zooming too much in or out
-//   scale = Math.min(Math.max(0.5, scale), 3);
+  // Simulate a click on the link to trigger the download
+  link.click();
 
-//   // Apply the scale transformation to the container
-//   container.style.transform = `scale(${scale})`;
-// });
+  // Remove the link from the body
+  document.body.removeChild(link);
+}

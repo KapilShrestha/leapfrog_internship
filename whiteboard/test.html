@@ -7,6 +7,7 @@
     <title>whiteboard</title>
   </head>
   <body>
+   
     <div class="dock" id="toolbar">
       <div class="dock-container">
         <li class="li-1">
@@ -38,11 +39,14 @@
           <img id="clear" class="ico" src="./src/img/wipe.svg" alt="" />
         </li>
       </div>
+      <button type="button" onclick="saveCanvas()">Save Canvas</button>
     </div>
 
     <div class="drawing-board">
       <canvas id="drawing-board"></canvas>
+      
     </div>
+
 
     <script src="./src/scripts/toolbar.js"></script>
     <!-- <script src="./src/scripts/cursor.js"></script> -->
