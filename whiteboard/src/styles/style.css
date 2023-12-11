@@ -11,23 +11,6 @@ body {
   display: flex;
 }
 
-#toolbar button {
-  background-color: blue;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  padding: 2px;
-}
-
-*,
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "San Francisco";
-}
-
 @font-face {
   font-family: "San Francisco";
   font-weight: 400;
@@ -38,8 +21,18 @@ body {
   font-weight: 800;
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
 }
-body {
-  background: white;
+* {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "San Francisco";
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "San Francisco";
 }
 
 .dock {
@@ -53,7 +46,6 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
-
 .dock .dock-container {
   padding: 3px;
   width: auto;
@@ -67,13 +59,11 @@ body {
   -webkit-backdrop-filter: blur(13px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-
 .dock .dock-container .li-bin {
   margin-left: 20px;
   border-left: 1.5px solid rgba(255, 255, 255, 0.4);
   padding: 0px 10px;
 }
-
 .dock .dock-container .li-1::after {
   position: absolute;
   width: 5px;
@@ -83,7 +73,6 @@ body {
   content: "";
   bottom: 2px;
 }
-
 .dock .dock-container li {
   list-style: none;
   display: flex;
@@ -95,11 +84,9 @@ body {
   transition: 0.2s;
   transform-origin: 50% 100%;
 }
-
 .dock .dock-container li:hover {
   margin: 0px 13px 0px 13px;
 }
-
 .dock .dock-container li .name {
   position: absolute;
   top: -70px;
@@ -113,7 +100,6 @@ body {
   border-radius: 5px;
   visibility: hidden;
 }
-
 .dock .dock-container li .name::after {
   content: "";
   position: absolute;
@@ -126,21 +112,18 @@ body {
   border-right: 10px solid transparent;
   border-top: 10px solid rgba(0, 0, 0, 0.5);
 }
-
 .dock .dock-container li .ico {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: 0.2s;
 }
-
 .dock .dock-container li .ico-bin {
   width: 94% !important;
   height: 94% !important;
   object-fit: cover;
   transition: 0.2s;
 }
-
 .dock .dock-container li .ico-bin:hover {
   margin-left: 10px;
 }

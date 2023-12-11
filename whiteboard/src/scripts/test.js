@@ -6,8 +6,10 @@ const penTool = document.getElementById("pen");
 const handTool = document.getElementById("hand");
 const colorPickerTool = document.getElementById("color-picker")
 
-const canvasOffsetX = canvas.offsetLeft;
-const canvasOffsetY = canvas.offsetTop;
+// const canvasOffsetX = canvas.offsetLeft;
+// const canvasOffsetY = canvas.offsetTop;
+const canvasOffsetX = 0;
+const canvasOffsetY = 0;
 
 canvas.width = window.innerWidth - canvasOffsetX;
 canvas.height = window.innerHeight - canvasOffsetY;
