@@ -11,18 +11,6 @@ $font-family_1: "San Francisco";
 	font-weight: 800;
 	src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
 }
-* {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	font-family: $font-family_1;
-}
-html {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	font-family: $font-family_1;
-}
 .dock {
 	width: auto;
 	height: 60px;
