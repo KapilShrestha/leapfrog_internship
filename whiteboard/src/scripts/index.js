@@ -6,6 +6,11 @@ const penTool = document.getElementById("pen");
 const handTool = document.getElementById("hand");
 const colorPickerTool = document.getElementById("color-picker");
 const slider = document.getElementById("sliderRange");
+
+slider.style.display = "none"; 
+
+
+
 const canvasOffsetX = 0;
 const canvasOffsetY = 0;
 
@@ -15,6 +20,7 @@ canvas.height = window.innerHeight - canvasOffsetY;
 let isPainting = false;
 let isErasing = false;
 let isPenActive = false;
+
 
 let lineWidth = 5;
 let eraserWidth = 5;
@@ -155,7 +161,13 @@ penTool.addEventListener("click", function (e) {
   document.body.classList.remove("eraser__default");
   document.body.classList.add("pen__default");
 
+  slider.style.display = "block"; //displays only when penTool is selected
+  
+
   if (isPenActive) {
+    
+    console.log(isPenActive)
+    
     
     return;
   }
@@ -169,13 +181,14 @@ colorPickerTool.addEventListener("click", function (e) {
   document.body.classList.add("pen__default");
   isPenActive = true;
   isErasing = false;
+  slider.style.display = "block"; //displays when color is selected
 });
 
 eraserButton.addEventListener("click", function () {
-  // lineWidth += 20; //makes the eraser more wider than the current lineWidth
   isPenActive = false;
   document.body.classList.remove("pen__default");
   document.body.classList.add("eraser__default");
+  slider.style.display = "block"; //displays only when eraserTool is selected
   if (isErasing) {
     
     return;
