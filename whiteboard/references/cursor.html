@@ -2,39 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Custom Cursor</title>
+  <title>Custom Cursor in Canvas</title>
   <style>
     body {
-      /* cursor: none; Hide default cursor */
       margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
+      cursor: none; /* Hide default cursor */
     }
-
-    /* Style for the custom cursor */
-    .custom-cursor {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: black;
-      position: fixed;
-      pointer-events: none; /* Ensure the cursor doesn't interfere with clicks */
-      z-index: 9999; /* Ensure it appears on top of everything */
+    canvas {
+      display: block;
     }
   </style>
 </head>
 <body>
-  <!-- The dot representing the custom cursor -->
-  <div class="custom-cursor"></div>
+  <canvas id="drawing-board"></canvas>
 
   <script>
-    document.addEventListener('mousemove', (e) => {
-      const cursor = document.querySelector('.custom-cursor');
-      cursor.style.top = `${e.clientY}px`;
-      cursor.style.left = `${e.clientX}px`;
+    const canvas = document.getElementById('drawing-board');
+    const ctx = canvas.getContext('2d');
+    const canvasOffsetX = canvas.offsetLeft;
+    const canvasOffsetY = canvas.offsetTop;
+
+    let cursorSize = 20; // Initial size of the cursor
+    const borderWidth = 2; // Border width for the cursor
+
+
+    canvas.width = window.innerWidth - canvasOffsetX;
+    canvas.height = window.innerHeight - canvasOffsetY;
+
+    function updateCursorSize(event) {
+      event.preventDefault();
+      cursorSize += event.deltaY * -0.1; // Change the scaling factor here
+      cursorSize = Math.min(Math.max(cursorSize, 10), 50); // Limit cursor size between 10 and 50
+
+
+      drawCursor();
+    }
+
+    function drawCursor() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.beginPath();
+      ctx.arc(
+        mouseX,
+        mouseY,
+        cursorSize / 2,
+        0,
+        Math.PI * 2
+      );
+      ctx.strokeStyle = '#000';
+      ctx.lineWidth = borderWidth;
+      ctx.stroke();
+    }
+
+    let mouseX = canvas.width / 2;
+    let mouseY = canvas.height / 2;
+
+    function updateCursorPosition(event) {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = event.clientX - rect.left;
+      mouseY = event.clientY - rect.top;
+
+      drawCursor();
+    }
+
+    document.addEventListener('wheel', updateCursorSize);
+
+    canvas.addEventListener('mousemove', (event) => {
+      updateCursorPosition(event);
     });
+
+    drawCursor(); // Initial draw
   </script>
 </body>
 </html>

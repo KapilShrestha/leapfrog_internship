@@ -1,21 +1,29 @@
-.hand{
-    &__default{
-        cursor: all-scroll;
-    }
-    &__select{
-        cursor: grab;
-    }
+.hand {
+  &__default {
+    cursor: all-scroll;
+  }
+  &__select {
+    cursor: grab;
+  }
 }
 
-.pen{
-    &__default{
-        cursor: url("../img/pen.png"), crosshair;
-        // cursor: crosshair;
-    }
+.pen {
+  &__default {
+    // cursor: url("../img/pen.png"), crosshair;
+    // cursor: crosshair;
+    position: fixed;
+      border: 2px solid #000; /* Initial border size */
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      pointer-events: none;
+      transition: width 0.2s ease-in-out, height 0.2s ease-in-out; /* Transition for size change */
+      transform: translate(-50%, -50%);
+  }
 }
 
-.eraser{
-    &__default{
-        cursor: move;
-    }
+.eraser {
+  &__default {
+    cursor: move;
+  }
 }

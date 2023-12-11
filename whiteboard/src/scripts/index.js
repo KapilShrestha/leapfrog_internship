@@ -47,16 +47,25 @@ toolbar.addEventListener("change", (e) => {
   }
 });
 
+
+
+function startDraw(e) {
+  if (!isPenActive && !isErasing) return;
+  isPainting = true;
+  // const { clientX, clientY } = e.touches ? e.touches[0] : e; 
+  startX = e.clientX;
+  startY = e.clientY;
+  currentCurve = [];
+  currentCurve.push({
+    x: startX - canvasOffsetX,
+    y: startY - canvasOffsetY,
+  });
+}
+
 const draw = (e) => {
   if (!isPainting) {
     return;
   }
-  e.preventDefault(); // Prevent default behavior for touch events
-
-  // Determine the event type (mouse or touch) and get the appropriate coordinates
-  const clientX = e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
-  const clientY = e.type === "touchmove" ? e.touches[0].clientY : e.clientY;
-  
   if (isErasing) {
     ctx.globalCompositeOperation = "destination-out"; // Set the composite operation for erasing
     ctx.beginPath();
@@ -69,7 +78,9 @@ const draw = (e) => {
       false
     );
     ctx.fill();
-  } else {
+  } 
+  else {
+    // const { clientX, clientY } = e.touches ? e.touches[0] : e; 
     ctx.globalCompositeOperation = "source-over";
     ctx.lineWidth = lineWidth;
     ctx.lineJoin = "round";
@@ -96,22 +107,6 @@ const draw = (e) => {
     startY = e.clientY;
   }
 };
-
-function startDraw(e) {
-  e.preventDefault();
-  if (!isPenActive && !isErasing) return;
-  isPainting = true;
-   // Determine the event type (mouse or touch) and get the appropriate coordinates
-   const clientX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
-   const clientY = e.type === "touchstart" ? e.touches[0].clientY : e.clientY;
-  startX = e.clientX;
-  startY = e.clientY;
-  currentCurve = [];
-  currentCurve.push({
-    x: startX - canvasOffsetX,
-    y: startY - canvasOffsetY,
-  });
-}
 
 function endDraw(e) {
   if (!isPenActive && !isErasing) return;
@@ -157,6 +152,7 @@ penTool.addEventListener("click", function (e) {
   isErasing = false;
   document.body.classList.remove("eraser__default");
   document.body.classList.add("pen__default");
+
   if (isPenActive) {
     return;
   }
@@ -226,3 +222,4 @@ function saveCanvas() {
   // Remove the link from the body
   document.body.removeChild(link);
 }
+
