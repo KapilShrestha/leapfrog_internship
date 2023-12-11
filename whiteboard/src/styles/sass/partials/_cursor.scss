@@ -9,8 +9,8 @@
 
 .pen {
   &__default {
-    cursor: url("../img/pen.png"), crosshair;
-    // cursor: crosshair;
+    // cursor: url("../img/pen.png"), crosshair;
+    cursor: crosshair;
   }
 }
 
