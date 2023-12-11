@@ -6,7 +6,9 @@ $font-family_1: "San Francisco";
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-direction: column;
 		gap: 20px;
+		// padding: auto  auto 20px auto;
 	}
 }
 @font-face {

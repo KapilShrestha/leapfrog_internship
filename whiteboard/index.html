@@ -7,7 +7,12 @@
     <title>whiteboard</title>
   </head>
   <body>
+    
     <div class="toolbar__wrapper">
+      <div class="slider">
+        <input id="sliderRange" type="range" min="5" max="80" value="5" >
+        <!-- <p class="value">Value: <span id="sliderValue">50</span></p> -->
+      </div>
       <div class="dock" id="toolbar">
         <ul class="dock-container">
           <li class="li-1">
@@ -56,20 +61,19 @@
           </li>
         </ul>
       </div>
-      <div class="slider toolbar__wrapper">
-        <input id="sliderRange" type="range" min="5" max="80" value="5" >
-        <!-- <p class="value">Value: <span id="sliderValue">50</span></p> -->
-      </div>
+      
 
     </div>
-    
 
     <div class="drawing-board">
       <canvas id="drawing-board"></canvas>
     </div>
+    
+
+    
 
     <script src="./src/scripts/toolbar.js"></script>
     <!-- <script src="./src/scripts/cursor.js"></script> -->
-    <script src="./src/scripts/test.js"></script>
+    <script src="./src/scripts/index.js"></script>
   </body>
 </html>

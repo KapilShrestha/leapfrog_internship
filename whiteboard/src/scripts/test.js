@@ -6,9 +6,8 @@ const penTool = document.getElementById("pen");
 const handTool = document.getElementById("hand");
 const colorPickerTool = document.getElementById("color-picker");
 const slider = document.getElementById("sliderRange");
+
 slider.style.display = "none";
-
-
 
 const canvasOffsetX = 0;
 const canvasOffsetY = 0;
@@ -16,10 +15,10 @@ const canvasOffsetY = 0;
 canvas.width = window.innerWidth - canvasOffsetX;
 canvas.height = window.innerHeight - canvasOffsetY;
 
+let isHandSelected = false;
 let isPainting = false;
 let isErasing = false;
 let isPenActive = false;
-
 
 let lineWidth = 5;
 let eraserWidth = 5;
@@ -62,8 +61,6 @@ function startDraw(e) {
     x: startX - canvasOffsetX,
     y: startY - canvasOffsetY,
   });
-  console.log("startdraw");
-  console.log(e.touches);
 }
 
 const draw = (e) => {
@@ -110,15 +107,17 @@ const draw = (e) => {
     startX = clientX - canvasOffsetX;
     startY = clientY - canvasOffsetY;
   }
-  console.log("drawing");
 };
 
 function endDraw(e) {
   if (!isPenActive && !isErasing) return;
   isPainting = false;
-  curves.push(currentCurve);
+
+  const { minX, minY, maxX, maxY } = calcBoundary(currentCurve);
+  console.log(minX, minY, maxX, maxY);
+  curves.push({ id: Date.now(), currentCurve, minX, minY, maxX, maxY });
+
   console.log(curves);
-  console.log("enddraw");
 }
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("touchstart", startDraw);
@@ -154,20 +153,51 @@ function redrawCanvas() {
   });
 }
 
+handTool.addEventListener("click", function (e) {
+  isPenActive = false;
+  isErasing = false;
+  if (isHandSelected) {
+    return;
+  }
+  canvas.addEventListener("click", function (e) {
+    console.log(e.clientX, e.clientY);
+    curves.map((c) => {
+      console.log(c)
+      if (c.minX < e.clientX < c.maxX && c.minY < e.clientY < c.maxY) {
+        drawBoundingBox(c.minX, c.minY, c.maxX, c.maxY);
+      }
+    });
+  });
+
+  isHandSelected = !isHandSelected;
+  handTool.style.backgroundColor = "red";
+});
+
+function calcBoundary(curve) {
+  let minX = Math.min(...curve.map((c) => c.x));
+  let minY = Math.min(...curve.map((c) => c.y));
+  let maxX = Math.max(...curve.map((c) => c.x));
+  let maxY = Math.max(...curve.map((c) => c.y));
+  return { minX, minY, maxX, maxY };
+}
+function drawBoundingBox( minX, minY, maxX, maxY ) {  
+  ctx.strokeStyle = "red";
+  ctx.lineWidth = 2;
+  ctx.strokeRect(minX, minY, maxX - minX, maxY - minY);
+  ctx.strokeStyle = "black"; // Reset to default
+}
+
+// penTool
 penTool.addEventListener("click", function (e) {
   e.stopPropagation();
   isErasing = false;
+  isHandSelected = false;
   document.body.classList.remove("eraser__default");
   document.body.classList.add("pen__default");
 
   slider.style.display = "block"; //displays only when penTool is selected
-  
 
   if (isPenActive) {
-    
-    console.log(isPenActive)
-    
-    
     return;
   }
   slider.value = lineWidth;
@@ -180,42 +210,41 @@ colorPickerTool.addEventListener("click", function (e) {
   document.body.classList.add("pen__default");
   isPenActive = true;
   isErasing = false;
+  isHandSelected = false;
   slider.style.display = "block"; //displays when color is selected
 });
 
+// eraserButton
 eraserButton.addEventListener("click", function () {
   isPenActive = false;
+  isHandSelected = false;
   document.body.classList.remove("pen__default");
   document.body.classList.add("eraser__default");
   slider.style.display = "block"; //displays only when eraserTool is selected
   if (isErasing) {
-    
     return;
   }
-  slider.value=eraserWidth
+  slider.value = eraserWidth;
   isErasing = !isErasing;
 });
 
 // change the linewidth using mouse scroll wheel
 canvas.onwheel = (e) => {
   if (isPenActive) {
-    console.log(e);
     if (e.deltaY >= 0) {
       lineWidth = Math.max(1, lineWidth - 5);
-      
     } else {
       lineWidth = Math.min(80, lineWidth + 5);
     }
-    slider.value = lineWidth
+    slider.value = lineWidth;
   }
   if (isErasing) {
-    console.log(e);
     if (e.deltaY >= 0) {
       eraserWidth = Math.max(1, eraserWidth - 5);
     } else {
       eraserWidth = Math.min(80, eraserWidth + 5);
     }
-    slider.value = eraserWidth
+    slider.value = eraserWidth;
   }
 };
 
@@ -239,16 +268,13 @@ function saveCanvas() {
   document.body.removeChild(link);
 }
 
-
 // slider js
 
-
-slider.oninput = function() {
-  if (isPenActive){
-    lineWidth = this.value
-  
+slider.oninput = function () {
+  if (isPenActive) {
+    lineWidth = this.value;
   }
-  if(isErasing){
-    eraserWidth = this.value
+  if (isErasing) {
+    eraserWidth = this.value;
   }
 };
