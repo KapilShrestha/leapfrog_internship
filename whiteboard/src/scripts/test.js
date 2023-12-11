@@ -71,11 +71,12 @@ const draw = (e) => {
     return;
   }
   if (isErasing) {
+    const { clientX, clientY } = e.touches ? e.touches[0] : e; 
     ctx.globalCompositeOperation = "destination-out"; // Set the composite operation for erasing
     ctx.beginPath();
     ctx.arc(
-      e.clientX - canvasOffsetX,
-      e.clientY - canvasOffsetY,
+      clientX - canvasOffsetX,
+      clientY - canvasOffsetY,
       eraserWidth / 2,
       0,
       Math.PI * 2,
