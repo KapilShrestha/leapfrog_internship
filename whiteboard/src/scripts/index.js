@@ -5,6 +5,7 @@ let eraserButton = document.getElementById("eraser");
 const penTool = document.getElementById("pen");
 const handTool = document.getElementById("hand");
 const colorPickerTool = document.getElementById("color-picker");
+const slider = document.getElementById("sliderRange");
 const canvasOffsetX = 0;
 const canvasOffsetY = 0;
 
@@ -155,8 +156,10 @@ penTool.addEventListener("click", function (e) {
   document.body.classList.add("pen__default");
 
   if (isPenActive) {
+    
     return;
   }
+  slider.value = lineWidth;
 
   isPenActive = !isPenActive;
 });
@@ -174,8 +177,10 @@ eraserButton.addEventListener("click", function () {
   document.body.classList.remove("pen__default");
   document.body.classList.add("eraser__default");
   if (isErasing) {
+    
     return;
   }
+  slider.value=eraserWidth
   isErasing = !isErasing;
 });
 
@@ -185,9 +190,11 @@ canvas.onwheel = (e) => {
     console.log(e);
     if (e.deltaY >= 0) {
       lineWidth = Math.max(1, lineWidth - 5);
+      
     } else {
       lineWidth = Math.min(80, lineWidth + 5);
     }
+    slider.value = lineWidth
   }
   if (isErasing) {
     console.log(e);
@@ -196,6 +203,7 @@ canvas.onwheel = (e) => {
     } else {
       eraserWidth = Math.min(80, eraserWidth + 5);
     }
+    slider.value = eraserWidth
   }
 };
 
@@ -218,3 +226,17 @@ function saveCanvas() {
   // Remove the link from the body
   document.body.removeChild(link);
 }
+
+
+// slider js
+
+
+slider.oninput = function() {
+  if (isPenActive){
+    lineWidth = this.value
+  
+  }
+  if(isErasing){
+    eraserWidth = this.value
+  }
+};
