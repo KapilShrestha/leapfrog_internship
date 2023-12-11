@@ -12,6 +12,13 @@ body {
   display: flex;
 }
 
+.toolbar__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 @font-face {
   font-family: "San Francisco";
   font-weight: 400;
@@ -183,6 +190,15 @@ button {
 
 .eraser__default {
   cursor: move;
+}
+
+.slider {
+  width: 300px;
+  margin-top: 80vh;
+}
+
+.value {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
