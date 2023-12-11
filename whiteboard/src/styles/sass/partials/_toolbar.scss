@@ -154,6 +154,13 @@ $font-family_1: "San Francisco";
 		}
 	}
 }
+.li-7 {
+	&:hover {
+		.name {
+			visibility: visible !important;
+		}
+	}
+}
 
 
 

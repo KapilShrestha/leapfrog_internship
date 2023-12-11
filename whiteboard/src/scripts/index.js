@@ -4,10 +4,9 @@ const ctx = canvas.getContext("2d");
 let eraserButton = document.getElementById("eraser");
 const penTool = document.getElementById("pen");
 const handTool = document.getElementById("hand");
-const colorPickerTool = document.getElementById("color-picker")
-
-const canvasOffsetX = canvas.offsetLeft;
-const canvasOffsetY = canvas.offsetTop;
+const colorPickerTool = document.getElementById("color-picker");
+const canvasOffsetX = 0;
+const canvasOffsetY = 0;
 
 canvas.width = window.innerWidth - canvasOffsetX;
 canvas.height = window.innerHeight - canvasOffsetY;
@@ -26,9 +25,8 @@ let currentCurve = []; // To store points of the current curve
 
 const curves = []; // To store all curves drawn
 
-ctx.fillStyle = 'white';
+ctx.fillStyle = "white";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
-
 
 toolbar.addEventListener("click", (e) => {
   if (e.target.id === "clear") {
@@ -47,12 +45,10 @@ toolbar.addEventListener("change", (e) => {
   }
 });
 
-
-
 function startDraw(e) {
   if (!isPenActive && !isErasing) return;
   isPainting = true;
-  // const { clientX, clientY } = e.touches ? e.touches[0] : e; 
+  const { clientX, clientY } = e.touches ? e.touches[0] : e;
   startX = e.clientX;
   startY = e.clientY;
   currentCurve = [];
@@ -60,6 +56,8 @@ function startDraw(e) {
     x: startX - canvasOffsetX,
     y: startY - canvasOffsetY,
   });
+  console.log("startdraw");
+  console.log(e.touches);
 }
 
 const draw = (e) => {
@@ -67,20 +65,20 @@ const draw = (e) => {
     return;
   }
   if (isErasing) {
+    const { clientX, clientY } = e.touches ? e.touches[0] : e;
     ctx.globalCompositeOperation = "destination-out"; // Set the composite operation for erasing
     ctx.beginPath();
     ctx.arc(
-      e.clientX - canvasOffsetX,
-      e.clientY - canvasOffsetY,
+      clientX - canvasOffsetX,
+      clientY - canvasOffsetY,
       eraserWidth / 2,
       0,
       Math.PI * 2,
       false
     );
     ctx.fill();
-  } 
-  else {
-    // const { clientX, clientY } = e.touches ? e.touches[0] : e; 
+  } else {
+    const { clientX, clientY } = e.touches ? e.touches[0] : e;
     ctx.globalCompositeOperation = "source-over";
     ctx.lineWidth = lineWidth;
     ctx.lineJoin = "round";
@@ -91,21 +89,22 @@ const draw = (e) => {
     ctx.bezierCurveTo(
       startX - canvasOffsetX + 0.25,
       startY - canvasOffsetY + 0.25,
-      e.clientX - canvasOffsetX - 0.25,
-      e.clientY - canvasOffsetY - 0.25,
-      e.clientX - canvasOffsetX,
-      e.clientY - canvasOffsetY
+      clientX - canvasOffsetX - 0.25,
+      clientY - canvasOffsetY - 0.25,
+      clientX - canvasOffsetX,
+      clientY - canvasOffsetY
     );
     ctx.stroke();
 
     currentCurve.push({
-      x: e.clientX - canvasOffsetX,
-      y: e.clientY - canvasOffsetY,
+      x: clientX - canvasOffsetX,
+      y: clientY - canvasOffsetY,
     });
 
-    startX = e.clientX;
-    startY = e.clientY;
+    startX = clientX - canvasOffsetX;
+    startY = clientY - canvasOffsetY;
   }
+  console.log("drawing");
 };
 
 function endDraw(e) {
@@ -113,13 +112,15 @@ function endDraw(e) {
   isPainting = false;
   curves.push(currentCurve);
   console.log(curves);
+  console.log("enddraw");
 }
-  canvas.addEventListener("mousedown", startDraw);
-  canvas.addEventListener("touchstart", startDraw);
-  canvas.addEventListener("mousemove", draw);
-  canvas.addEventListener("touchmove", draw);
-  canvas.addEventListener("mouseup", endDraw);
-  canvas.addEventListener("touchend", endDraw);
+canvas.addEventListener("mousedown", startDraw);
+canvas.addEventListener("touchstart", startDraw);
+
+canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("touchmove", draw);
+canvas.addEventListener("mouseup", endDraw);
+canvas.addEventListener("touchend", endDraw);
 
 // to remove last drawn element
 document.addEventListener("keydown", (event) => {
@@ -160,16 +161,12 @@ penTool.addEventListener("click", function (e) {
   isPenActive = !isPenActive;
 });
 
-colorPickerTool.addEventListener("click", function(e){
+colorPickerTool.addEventListener("click", function (e) {
   document.body.classList.remove("eraser__default");
-    document.body.classList.add("pen__default");
-    isPenActive = true;
-    isErasing = false;
-
+  document.body.classList.add("pen__default");
+  isPenActive = true;
+  isErasing = false;
 });
-
-
-
 
 eraserButton.addEventListener("click", function () {
   // lineWidth += 20; //makes the eraser more wider than the current lineWidth
@@ -202,15 +199,14 @@ canvas.onwheel = (e) => {
   }
 };
 
-
 // to save the canvas in png format
 function saveCanvas() {
   // Convert the canvas content to an image data URL
-  const dataURL = canvas.toDataURL('image/png');
+  const dataURL = canvas.toDataURL("image/png");
 
   // Create a temporary link element
-  const link = document.createElement('a');
-  link.download = 'canvas_image.png'; // Set the file name
+  const link = document.createElement("a");
+  link.download = "canvas_image.png"; // Set the file name
   link.href = dataURL; // Set the data URL as the href attribute
 
   // Append the link to the body
@@ -222,4 +218,3 @@ function saveCanvas() {
   // Remove the link from the body
   document.body.removeChild(link);
 }
-

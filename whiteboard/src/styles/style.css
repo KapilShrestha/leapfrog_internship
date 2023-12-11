@@ -141,6 +141,10 @@ body {
   visibility: visible !important;
 }
 
+.li-7:hover .name {
+  visibility: visible !important;
+}
+
 button {
   background-color: Transparent;
   background-repeat: no-repeat;
