@@ -4,7 +4,11 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: white;
+}
+
+input[type=text] {
+  border: none; /* Removing border from text boxes */
+  outline: none; /* Removing the outline */
 }
 
 .toolbar__wrapper {

@@ -519,6 +519,6 @@ slider.oninput = function () {
 //         canvas.addEventListener('mouseup', function () {
 //             isDragging = false;
 //             isResizing = false;
-//         });
+// 
 
-
+// });
