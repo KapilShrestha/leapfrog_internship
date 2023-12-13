@@ -258,6 +258,7 @@ penTool.addEventListener("click", function (e) {
   e.stopPropagation();
   isErasing = false;
   isHandSelected = false;
+  isTextToolSelected = false
   document.body.classList.remove("eraser__default");
   document.body.classList.add("pen__default");
 
@@ -284,6 +285,7 @@ colorPickerTool.addEventListener("click", function (e) {
 eraserButton.addEventListener("click", function () {
   isPenActive = false;
   isHandSelected = false;
+  isTextToolSelected = false;
   document.body.classList.remove("pen__default");
   document.body.classList.add("eraser__default");
   slider.style.display = "block"; //displays only when eraserTool is selected
