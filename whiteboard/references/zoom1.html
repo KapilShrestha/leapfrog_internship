@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Zoom</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="600" height="400"></canvas>
+
+  <script>
+    // Get the canvas and its context
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Initial scale and translation values
+    let scale = 1;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    // Function to handle zoom in/out
+    function zoom(event) {
+      const zoomFactor = 0.1;
+      const wheel = event.deltaY < 0 ? 1 : -1; // Check scroll direction
+
+      // Zoom in or out based on wheel direction
+      if (wheel === 1) {
+        scale += zoomFactor;
+      } else {
+        scale -= zoomFactor;
+      }
+
+      // Limit scale to a minimum value to avoid inversion
+      scale = Math.max(0.1, scale);
+
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Save the current transformation matrix
+      ctx.save();
+
+      // Translate to the center of the canvas
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+
+      // Apply the scale transformation
+      ctx.scale(scale, scale);
+
+      // Reverse the earlier translation
+      ctx.translate(-canvas.width / 2, -canvas.height / 2);
+
+      // Redraw the content
+      // Replace this with your drawing logic
+      ctx.fillStyle = 'blue';
+      ctx.fillRect(100, 100, 200, 150);
+
+      // Restore the original transformation matrix
+      ctx.restore();
+    }
+
+    // Add event listener for mouse wheel
+    canvas.addEventListener('wheel', zoom);
+
+    // Initial drawing (you can replace this with your content)
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(100, 100, 200, 150);
+  </script>
+</body>
+</html>

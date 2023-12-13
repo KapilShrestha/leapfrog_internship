@@ -1,38 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Canvas Zoom Example</title>
+    <title>Zoom Canvas</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
 </head>
 <body>
-  <button onclick="zoomIn()">Zoom In</button>
-  <button onclick="zoomOut()">Zoom Out</button>
-  <canvas id="myCanvas" width="400" height="300" style="border:1px solid #000;"></canvas>
+    <canvas id="drawing-board" width="400" height="300"></canvas>
 
-  <script>
-    var canvas = document.getElementById('myCanvas');
-    var ctx = canvas.getContext('2d');
-    var scaleFactor = 1.0;
-    var zoomFactor = 0.1; // Change this value to adjust zoom speed
+    <script>
+        const canvas = document.getElementById("drawing-board");
+        const ctx = canvas.getContext("2d");
 
-    function zoomIn() {
-      scaleFactor += zoomFactor;
-      applyZoom();
-    }
+        const gridSize = 20; // Size of grid cells
+        const gridColor = "#3498db";
 
-    function zoomOut() {
-      scaleFactor -= zoomFactor;
-      applyZoom();
-    }
+        // Function to draw the grid
+        function drawGrid() {
+            ctx.strokeStyle = gridColor;
+            for (let x = 0; x < canvas.width; x += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+            for (let y = 0; y < canvas.height; y += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+        }
 
-    function applyZoom() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.save();
-      ctx.scale(scaleFactor, scaleFactor);
-      // Redraw your content or perform any other drawing operations here
-      ctx.fillStyle = 'blue';
-      ctx.fillRect(50, 50, 100, 80);
-      ctx.restore();
-    }
-  </script>
+        // Function to handle zooming
+        function zoomCanvas(e) {
+            const zoomSpeed = 0.1; // Adjust the zoom speed as needed
+            const zoomIntensity = e.deltaY > 0 ? -zoomSpeed : zoomSpeed;
+
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            const scaleFactor = Math.exp(zoomIntensity);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+
+            ctx.translate(mouseX, mouseY);
+            ctx.scale(scaleFactor, scaleFactor);
+            ctx.translate(-mouseX, -mouseY);
+
+            // Redraw the grid after scaling
+            drawGrid();
+
+            // Prevent the browser's default zoom action on the canvas
+            e.preventDefault();
+        }
+
+        // Attach the 'wheel' event listener to the canvas
+        canvas.addEventListener("wheel", zoomCanvas);
+
+        // Initial drawing of the grid
+        drawGrid();
+    </script>
 </body>
 </html>
