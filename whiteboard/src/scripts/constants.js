@@ -4,10 +4,14 @@ const ctx = canvas.getContext("2d");
 const canvasImage = document.getElementById("image-board");
 const ctxImage = canvasImage.getContext("2d");
 
-canvasImage.width = window.innerWidth 
-canvasImage.height = window.innerHeight
+const canvasOffsetX = 0;
+const canvasOffsetY = 0;
 
-// document.body.style.backgroundColor = "red";
+canvas.width = window.innerWidth - canvasOffsetX;
+canvas.height = window.innerHeight - canvasOffsetY;
+
+canvasImage.width = window.innerWidth - canvasOffsetX;
+canvasImage.height = window.innerHeight - canvasOffsetY;
 
 const blackBgBtn = document.getElementById("black-bg");
 const whiteBgBtn = document.getElementById("white-bg");
@@ -24,14 +28,7 @@ const bgImg = document.getElementById("bg-image")
 
 slider.style.display = "none";
 
-const canvasOffsetX = 0;
-const canvasOffsetY = 0;
 
-canvas.width = window.innerWidth - canvasOffsetX;
-canvas.height = window.innerHeight - canvasOffsetY;
-
-canvasImage.width = window.innerWidth - canvasOffsetX;
-canvasImage.height = window.innerHeight - canvasOffsetY;
 
 let isHandSelected = false;
 let isTextToolSelected = false;
@@ -58,3 +55,8 @@ const curves = []; // To store all curves drawn
 let scale = 1;
 let offsetX = 0;
 let offsetY = 0;
+
+
+let white = "#fff"
+let black = "#000"
+let primaryColor = "#595959"

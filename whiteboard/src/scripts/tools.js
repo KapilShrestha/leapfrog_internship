@@ -89,9 +89,10 @@ handTool.addEventListener("click", function (e) {
   }
   canvas.addEventListener("wheel", zoom);
   canvas.addEventListener("click", function (e) {
+    let isSelectedCurve = curves.find(c => c.minX < e.clientX < c.maxX && c.minY < e.clientY < c.maxY).id;
     curves.map((c) => {
-      console.log(c);
-      if (c.minX < e.clientX < c.maxX && c.minY < e.clientY < c.maxY) {
+      if (c.id === isSelectedCurve) {
+        console.log(c.id, "checking id")
         drawBoundingBox(c.minX, c.minY, c.maxX, c.maxY);
         document.body.classList.add("hand__grabbing");
       }
@@ -100,6 +101,26 @@ handTool.addEventListener("click", function (e) {
 
   isHandSelected = !isHandSelected;
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // textboxtool
 
