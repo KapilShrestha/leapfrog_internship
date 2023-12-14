@@ -2,6 +2,16 @@ $color_1: rgba(255, 255, 255, 0.9);
 $font-family_1: "San Francisco";
 
 .toolbar{
+	&__top{
+		position: relative;
+		top: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		// flex-direction: column;
+		gap: 20px;
+	
+	}
 	&__wrapper{
 		display: flex;
 		justify-content: center;

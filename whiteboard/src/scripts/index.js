@@ -46,6 +46,7 @@ const draw = (e) => {
       false
     );
     ctx.fill();
+    console.log(ctx.fill(), "fillcolor")
   } else {
     const { clientX, clientY } = e.touches ? e.touches[0] : e;
     ctx.globalCompositeOperation = "source-over";
@@ -149,10 +150,4 @@ function saveCanvas() {
 
 
 // changing background
-// window.onload = function(){
-//   const bgImg = document.getElementById("bg-image")
-//   ctx.drawImage(bgImg, 0, 0)
-// }
-// function changeBackgroundColor(color) {
-//   document.body.style.backgroundColor = color;
-// }
+

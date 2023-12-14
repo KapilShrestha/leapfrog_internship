@@ -27,9 +27,6 @@ const focus = (elem, index) => {
   } else {
 	elem.style.transform = "scale(1.5)  translateY(-10px)";
 	icons[previous].style.transform = "scale(1.2) translateY(-6px)";
-	// console.log(icons,previous)
-	// icons[previous1].style.transform = "scale(1.1)";
 	icons[next].style.transform = "scale(1.2) translateY(-6px)";
-	// icons[next2].style.transform = "scale(1.1)";
   }
 };

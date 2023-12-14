@@ -150,13 +150,4 @@ function saveCanvas() {
 
 
 // changing background
-window.onload = function(){
-  const bgImg = document.getElementById("bg-image")
-  ctxImage.drawImage(bgImg, 0, 0)
-  // const bgImg =  new Image();
-  // bgImg.src = "../src/img/exercise_book.jpg"
-}
 
-// function changeBackgroundColor(color) {
-//   document.body.style.backgroundColor = color;
-// }

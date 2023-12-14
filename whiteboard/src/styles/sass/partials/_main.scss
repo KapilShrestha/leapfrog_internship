@@ -8,7 +8,8 @@ body {
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	// background-color: $background-color_1;
+	position: relative;
+	
 }
 
 // for createtextbox
@@ -16,6 +17,7 @@ body {
 input[type="text"] {
 	border: none; /* Removing border from text boxes */
 	outline: none; /* Removing the outline */
+	background: transparent;
 }
 
 .image-board{

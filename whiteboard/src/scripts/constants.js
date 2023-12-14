@@ -9,6 +9,9 @@ canvasImage.height = window.innerHeight
 
 // document.body.style.backgroundColor = "red";
 
+const blackBgBtn = document.getElementById("black-bg");
+const whiteBgBtn = document.getElementById("white-bg");
+const notebookBgbtn = document.getElementById("notebook-bg")
 const toolbar = document.getElementById("toolbar");
 const eraserButton = document.getElementById("eraser");
 const penTool = document.getElementById("pen");
@@ -16,6 +19,7 @@ const handTool = document.getElementById("hand");
 const colorPickerTool = document.getElementById("color-picker");
 const slider = document.getElementById("sliderRange");
 const textBoxTool = document.getElementById("text-box");
+const bgImg = document.getElementById("bg-image")
 
 
 slider.style.display = "none";
@@ -26,11 +30,17 @@ const canvasOffsetY = 0;
 canvas.width = window.innerWidth - canvasOffsetX;
 canvas.height = window.innerHeight - canvasOffsetY;
 
+canvasImage.width = window.innerWidth - canvasOffsetX;
+canvasImage.height = window.innerHeight - canvasOffsetY;
+
 let isHandSelected = false;
 let isTextToolSelected = false;
 let isPainting = false;
 let isErasing = false;
 let isPenActive = false;
+let isNotebookSelected = false;
+let isBlackBtnSelected = false;
+let isWhiteBtnSelected = false;
 let selectedColor = "#000"
 let isResizing;
 
