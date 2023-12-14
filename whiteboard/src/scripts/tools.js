@@ -88,19 +88,53 @@ handTool.addEventListener("click", function (e) {
     return;
   }
   canvas.addEventListener("wheel", zoom);
+
   canvas.addEventListener("click", function (e) {
-    let isSelectedCurve = curves.find(c => c.minX < e.clientX < c.maxX && c.minY < e.clientY < c.maxY).id;
+    selectedCurve = curves.find(c => c.minX < e.clientX < c.maxX && c.minY < e.clientY < c.maxY);
     curves.map((c) => {
-      if (c.id === isSelectedCurve) {
+      if (c.id === selectedCurve.id) {
         console.log(c.id, "checking id")
         drawBoundingBox(c.minX, c.minY, c.maxX, c.maxY);
         document.body.classList.add("hand__grabbing");
       }
     });
   });
-
   isHandSelected = !isHandSelected;
 });
+canvas.addEventListener("mousedown", function(e){
+  isDragging = true;
+})
+
+canvas.addEventListener("mousemove", function(e){
+  if(isDragging && selectedCurve){
+      let mouseX = e.clientX;
+      let mouseY = e.clientY;
+      
+      let curveWidth = selectedCurve.maxX - selectedCurve.minX;
+      let curveHeight = selectedCurve.maxY - selectedCurve.minY;
+
+      // Update curve position based on mouse movement
+      selectedCurve.minX = mouseX;
+      selectedCurve.minY = mouseY;
+      selectedCurve.maxX = mouseX + curveWidth;
+      selectedCurve.maxY = mouseY + curveHeight;
+
+      // Update each point's position within the curve
+      selectedCurve.currentCurve.forEach((point) => {
+          point.x += e.clientX - mouseX;
+          point.y += e.clientY - mouseY;
+      });
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      redrawCanvas(); 
+  }
+});
+
+canvas.addEventListener("mouseup", function () {
+  isDragging = false;
+  selectedCurve = null;
+});
+
 
 
 

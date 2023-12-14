@@ -40,6 +40,9 @@ let isBlackBtnSelected = false;
 let isWhiteBtnSelected = false;
 let selectedColor = "#000"
 let isResizing;
+let selectedCurve = null;
+
+let isDragging = false;
 
 let lineWidth = 5;
 let eraserWidth = 5;
