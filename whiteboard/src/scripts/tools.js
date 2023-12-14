@@ -1,6 +1,6 @@
 colorPickerTool.addEventListener("click", function (e) {
   document.body.classList.remove("eraser__default");
-   document.body.classList.remove("text__default");
+  document.body.classList.remove("text__default");
   document.body.classList.add("pen__default");
   isPenActive = true;
   isErasing = false;
@@ -13,6 +13,7 @@ penTool.addEventListener("click", function (e) {
   isErasing = false;
   isHandSelected = false;
   isTextToolSelected = false;
+  console.log(isTextToolSelected);
   document.body.classList.remove("eraser__default");
   document.body.classList.remove("text__default");
   document.body.classList.add("pen__default");
@@ -77,10 +78,12 @@ slider.oninput = function () {
 handTool.addEventListener("click", function (e) {
   isPenActive = false;
   isErasing = false;
+  isTextToolSelected = false;
+
   document.body.classList.remove("pen__default");
   document.body.classList.remove("eraser__default");
   document.body.classList.remove("text__default");
-  document.body.classList.add("hand__default")
+  document.body.classList.add("hand__default");
   if (isHandSelected) {
     return;
   }
@@ -90,13 +93,12 @@ handTool.addEventListener("click", function (e) {
       console.log(c);
       if (c.minX < e.clientX < c.maxX && c.minY < e.clientY < c.maxY) {
         drawBoundingBox(c.minX, c.minY, c.maxX, c.maxY);
-        document.body.classList.add("hand__grabbing")
+        document.body.classList.add("hand__grabbing");
       }
     });
   });
 
   isHandSelected = !isHandSelected;
-  // handTool.style.backgroundColor = "red";
 });
 
 // textboxtool
@@ -113,29 +115,35 @@ textBoxTool.addEventListener("click", function (e) {
   if (isTextToolSelected) {
     return;
   }
-  isTextToolSelected = true;
+  isTextToolSelected = !isTextToolSelected;
 });
 
 function createTextBox() {
   canvas.addEventListener("click", function (event) {
-    var x = event.clientX - canvas.getBoundingClientRect().left;
-    var y = event.clientY - canvas.getBoundingClientRect().top;
-
-    var input = document.createElement("input");
+    let x = event.clientX;
+    let y = event.clientY;
+    let input = document.createElement("input");
     input.type = "text";
     input.style.position = "absolute";
     input.style.left = x + "px";
     input.style.top = y + "px";
-    input.style.minWidth = "50px"; // Set a minimum width
-
+    input.style.minWidth = "10px"; // Set a minimum width
     document.body.appendChild(input);
-
+    
     input.addEventListener("input", function () {
-      var text = input.value;
+      let text = input.value;
       ctx.font = window.getComputedStyle(input).getPropertyValue("font");
-      var textWidth = ctx.measureText(text).width + 5; // To add some extra space
+      let textWidth = ctx.measureText(text).width + 5; // To add some extra space
       input.style.width = textWidth + "px"; // To adjust width based on text content
     });
+    
+    input.addEventListener("blur", function() {
+      if (input.value.trim() === '') {
+        document.body.removeChild(input);
+      }
+    });
+
     input.focus(); // Set focus to the newly created text box
   });
 }
+

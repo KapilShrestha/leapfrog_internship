@@ -1,6 +1,13 @@
 const canvas = document.getElementById("drawing-board");
 const ctx = canvas.getContext("2d");
 
+const canvasImage = document.getElementById("image-board");
+const ctxImage = canvasImage.getContext("2d");
+
+canvasImage.width = window.innerWidth 
+canvasImage.height = window.innerHeight
+
+// document.body.style.backgroundColor = "red";
 
 const toolbar = document.getElementById("toolbar");
 const eraserButton = document.getElementById("eraser");
@@ -37,8 +44,7 @@ let currentCurve = []; // To store points of the current curve
 
 const curves = []; // To store all curves drawn
 
-// zoom
-//  // Initial scale and translation values
+// Initial scale and translation values
 let scale = 1;
 let offsetX = 0;
 let offsetY = 0;

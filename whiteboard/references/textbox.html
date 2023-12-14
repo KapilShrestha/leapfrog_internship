@@ -20,14 +20,14 @@
   <button type="button" onclick="createTextBox()">Create Text Box</button>
   <script>
     function createTextBox() {
-      var canvas = document.getElementById('myCanvas');
-      var ctx = canvas.getContext('2d');
+      let canvas = document.getElementById('myCanvas');
+      let ctx = canvas.getContext('2d');
       
       canvas.addEventListener('click', function(event) {
-        var x = event.clientX - canvas.getBoundingClientRect().left;
-        var y = event.clientY - canvas.getBoundingClientRect().top;
+        let x = event.clientX - canvas.getBoundingClientRect().left;
+        let y = event.clientY - canvas.getBoundingClientRect().top;
         
-        var input = document.createElement('input');
+        let input = document.createElement('input');
         input.type = 'text';
         input.style.position = 'absolute';
         input.style.left = x + 'px';

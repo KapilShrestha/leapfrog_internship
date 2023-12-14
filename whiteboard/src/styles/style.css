@@ -11,6 +11,11 @@ input[type=text] {
   outline: none; /* Removing the outline */
 }
 
+.image-board {
+  position: absolute;
+  z-index: -1;
+}
+
 .toolbar__wrapper {
   display: flex;
   justify-content: center;

@@ -17,3 +17,8 @@ input[type="text"] {
 	border: none; /* Removing border from text boxes */
 	outline: none; /* Removing the outline */
 }
+
+.image-board{
+	position: absolute;
+	z-index: -1;
+}

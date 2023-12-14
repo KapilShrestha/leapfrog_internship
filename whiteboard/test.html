@@ -16,7 +16,7 @@
       <!-- <p class="value">Value: <span id="sliderValue">50</span></p> -->
     </div>
     <div class="dock" id="toolbar">
-      <!-- <button type="button" onclick="changeBackgroundColor('black')">black</button> -->
+      <button type="button" onclick="changeBackgroundColor('black')">black</button>
       <ul class="dock-container">
         <li class="li-1">
           <div class="name">Select</div>
@@ -62,22 +62,25 @@
           <button type="button" id="addRectangle">Add Rectangle</button>
           <button  type="button" id="addCircle">Add Circle</button>
       </div> -->
-      <!-- <button id="text-box" type="button" onclick="createTextBox()">Add Text Box</button> -->
       </ul>
     </div>
   </div>
-
-
+  <div class="image-board">
+    <canvas id="image-board"></canvas>
+  </div>
   <div class="drawing-board">
     <canvas id="drawing-board"></canvas>
   </div>
+  
+
+  
+  
   <img id="bg-image" width="10%" height="10%" src="./src/img/exercise_book.jpg" alt="backgroundImage">
 
   <script src="./src/scripts/constants.js"></script>
   <script src="./src/scripts/zoom.js"></script>
   <script src="./src/scripts/tools.js"></script>
   <script src="./src/scripts/toolbar.js"></script>
-  <script src="./src/scripts/textbox.js"></script>
   <!-- <script src="./src/scripts/shapes.js"></script> -->
   <!-- <script src="./src/scripts/cursor.js"></script> -->
   <script src="./src/scripts/test.js"></script>
