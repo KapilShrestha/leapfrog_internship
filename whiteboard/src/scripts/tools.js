@@ -69,3 +69,26 @@ slider.oninput = function () {
     eraserWidth = this.value;
   }
 };
+
+
+handTool.addEventListener("click", function (e) {
+    isPenActive = false;
+    isErasing = false;
+    if (isHandSelected) {
+      return;
+    }
+    canvas.addEventListener('wheel', zoom);
+    canvas.addEventListener("click", function (e) {
+      console.log(e, "retest")
+      // console.log(e.clientX, e.clientY);
+      curves.map((c) => {
+        console.log(c)
+        if (c.minX < e.clientX < c.maxX && c.minY < e.clientY < c.maxY) {
+          drawBoundingBox(c.minX, c.minY, c.maxX, c.maxY);
+        }
+      });
+    });
+  
+    isHandSelected = !isHandSelected;
+    handTool.style.backgroundColor = "red";
+  });

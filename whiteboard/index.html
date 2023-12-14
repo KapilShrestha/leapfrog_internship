@@ -26,10 +26,10 @@
           <div class="name">Pen</div>
           <img id="pen" class="ico" src="./src/img/pen.svg" alt="pen" />
         </li>
-        <!-- <li class="li-3">
+        <li class="li-3">
           <div class="name">Highlighter</div>
           <img id="highlighter" class="ico" src="./src/img/highlighter.svg" alt="pen" />
-        </li> -->
+        </li>
         <li class="li-4">
           <div class="name">Eraser</div>
           <img class="ico" src="./src/img/eraser.svg" alt="eraser" id="eraser" />
@@ -53,10 +53,11 @@
           <div class="name">Download</div>
           <img id="save-canvas" onclick="saveCanvas()" class="ico" src="./src/img/download.svg" alt="download" />
         </li>
-        <!-- <div>
+        <div>
           <button type="button" id="addRectangle">Add Rectangle</button>
           <button  type="button" id="addCircle">Add Circle</button>
-      </div> -->
+      </div>
+      <button id="text-box" type="button" onclick="createTextBox()">Add Text Box</button>
       </ul>
     </div>
   </div>
@@ -65,14 +66,14 @@
   <div class="drawing-board">
     <canvas id="drawing-board"></canvas>
   </div>
-  <!-- <img id="bg-image" width="10%" height="10%" src="./src/img/exercise_book.jpg" alt="backgroundImage"> -->
+  <img id="bg-image" width="10%" height="10%" src="./src/img/exercise_book.jpg" alt="backgroundImage">
 
-
+  <script src="./src/scripts/constants.js"></script>
+  <script src="./src/scripts/zoom.js"></script>
+  <script src="./src/scripts/tools.js"></script>
   <script src="./src/scripts/toolbar.js"></script>
-  <!-- <script src="./src/scripts/shapes.js"></script> -->
+  <script src="./src/scripts/textbox.js"></script>
   <!-- <script src="./src/scripts/cursor.js"></script> -->
-  <script src="./src/scripts/test.js"></script>
-  <!-- <script src="./src/scripts/index.js"></script> -->
+  <script src="./src/scripts/index.js"></script>
 </body>
-
 </html>

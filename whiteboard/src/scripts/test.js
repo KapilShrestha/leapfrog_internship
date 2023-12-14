@@ -87,7 +87,6 @@ function endDraw(e) {
 }
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("touchstart", startDraw);
-
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("touchmove", draw);
 canvas.addEventListener("mouseup", endDraw);
@@ -123,29 +122,6 @@ function redrawCanvas() {
   });
 }
 
-
-handTool.addEventListener("click", function (e) {
-  isPenActive = false;
-  isErasing = false;
-  if (isHandSelected) {
-    return;
-  }
-  canvas.addEventListener('wheel', zoom);
-  canvas.addEventListener("click", function (e) {
-    console.log(e, "retest")
-    // console.log(e.clientX, e.clientY);
-    curves.map((c) => {
-      console.log(c)
-      if (c.minX < e.clientX < c.maxX && c.minY < e.clientY < c.maxY) {
-        drawBoundingBox(c.minX, c.minY, c.maxX, c.maxY);
-      }
-    });
-  });
-
-  isHandSelected = !isHandSelected;
-  handTool.style.backgroundColor = "red";
-});
-
 function calcBoundary(curve) {
   let minX = Math.min(...curve.map((c) => c.x));
   let minY = Math.min(...curve.map((c) => c.y));
@@ -171,17 +147,6 @@ function saveCanvas() {
   link.click();
   document.body.removeChild(link); // Remove the link from the body
 }
-
-// slider js
-
-// slider.oninput = function () {
-//   if (isPenActive) {
-//     lineWidth = this.value;
-//   }
-//   if (isErasing) {
-//     eraserWidth = this.value;
-//   }
-// };
 
 
 // changing background
