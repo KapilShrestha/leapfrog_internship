@@ -178,10 +178,10 @@ button {
 }
 
 .hand__default {
-  cursor: all-scroll;
+  cursor: pointer;
 }
-.hand__select {
-  cursor: grab;
+.hand__grabbing {
+  cursor: grabbing;
 }
 
 .pen__default {
@@ -190,6 +190,10 @@ button {
 
 .eraser__default {
   cursor: move;
+}
+
+.text__default {
+  cursor: text;
 }
 
 .slider {

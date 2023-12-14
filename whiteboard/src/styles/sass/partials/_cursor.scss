@@ -1,9 +1,9 @@
 .hand {
   &__default {
-    cursor: all-scroll;
+    cursor: pointer;
   }
-  &__select {
-    cursor: grab;
+  &__grabbing {
+    cursor: grabbing;
   }
 }
 
@@ -17,5 +17,10 @@
 .eraser {
   &__default {
     cursor: move;
+  }
+}
+.text {
+  &__default {
+    cursor: text;
   }
 }
