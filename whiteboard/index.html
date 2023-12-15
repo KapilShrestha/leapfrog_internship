@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/styles/style.css" />
   <title>whiteboard</title>
 </head>
@@ -11,15 +14,25 @@
 <body>
   <nav>
     <div class="navbar">
-      <button type="button" id="black-bg" onclick="changeBackgroundColor('black')">black</button>
-    <button type="button" id="white-bg">White</button>
-    <button type="button" id="notebook-bg">Notebook</button>
+      <div class="navbar__right">
+        <!-- <p>Whiteboard</p> -->
+        <button type="button" id="upload-image" onclick="uploadImage()" class="btn">Upload</button>
+      </div>
+      <div class="navbar__middle">
+        <button type="button" id="black-bg" class="btn">Black</button>
+        <button type="button" id="white-bg" class="btn">White</button>
+        <button type="button" id="notebook-bg" class="btn">Notebook</button>
+      </div>
+      <div class="navbar__right">
+        <button type="button" id="save-canvas" onclick="saveCanvas()"> Download</button>
+      </div>
     </div>
   </nav>
+
   <div class="bg__image">
     <img id="bg-image" width="10%" height="10%" src="./src/img/exercise_book.jpg" alt="backgroundImage">
   </div>
-  
+
 
   <div class="toolbar__wrapper">
     <div class="slider">
@@ -27,7 +40,7 @@
       <!-- <p class="value">Value: <span id="sliderValue">50</span></p> -->
     </div>
     <div class="dock" id="toolbar">
-      
+
       <ul class="dock-container">
         <li class="li-1">
           <div class="name">Select</div>
@@ -64,11 +77,11 @@
           <div class="name">wipe</div>
           <img id="clear" class="ico" src="./src/img/wipe.svg" alt="" />
         </li>
-        <li class="li-9">
+        <!-- <li class="li-9">
           <div class="name">Download</div>
           <img id="save-canvas" onclick="saveCanvas()" class="ico" src="./src/img/download.svg" alt="download" />
-        </li>
-        
+        </li> -->
+
         <!-- <div>
           <button type="button" id="addRectangle">Add Rectangle</button>
           <button  type="button" id="addCircle">Add Circle</button>
@@ -82,18 +95,20 @@
   <div class="drawing-board">
     <canvas id="drawing-board"></canvas>
   </div>
-  
 
-  
-  
-  
+
+
+
+
 
   <script src="./src/scripts/constants.js"></script>
   <script src="./src/scripts/zoom.js"></script>
   <script src="./src/scripts/tools.js"></script>
   <script src="./src/scripts/toolbar.js"></script>
   <script src="./src/scripts/bgcanvas.js"></script>
+  <script src="./src/scripts/upload.js"></script>
   <!-- <script src="./src/scripts/cursor.js"></script> -->
-  <script src="./src/scripts/test.js"></script>
+  <script src="./src/scripts/index.js"></script>
 </body>
+
 </html>
