@@ -9,18 +9,47 @@ body {
 	width: 100%;
 	overflow: hidden;
 	position: relative;
-	
+
+
+
+}
+
+.navbar {
+	background-color: white;
+	height: 10px;
+	position: relative;
+	top: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// flex-direction: column;
+	gap: 20px;
 }
 
 // for createtextbox
 
 input[type="text"] {
-	border: none; /* Removing border from text boxes */
-	outline: none; /* Removing the outline */
+	border: none;
+	/* Removing border from text boxes */
+	outline: none;
+	/* Removing the outline */
 	background: transparent;
 }
 
-.image-board{
+.image-board {
 	position: absolute;
 	z-index: -1;
+}
+
+.bg__image {
+	display: none;
+}
+
+@media screen and (max-width:575px) {
+	html{
+	width: 100%;
+	height: auto;
+	// overflow: visible;
+	}
+	
 }

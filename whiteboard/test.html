@@ -9,11 +9,17 @@
 </head>
 
 <body>
-  <div class="toolbar__top">
-    <button type="button" id="black-bg" onclick="changeBackgroundColor('black')">black</button>
+  <nav>
+    <div class="navbar">
+      <button type="button" id="black-bg" onclick="changeBackgroundColor('black')">black</button>
     <button type="button" id="white-bg">White</button>
     <button type="button" id="notebook-bg">Notebook</button>
+    </div>
+  </nav>
+  <div class="bg__image">
+    <img id="bg-image" width="10%" height="10%" src="./src/img/exercise_book.jpg" alt="backgroundImage">
   </div>
+  
 
   <div class="toolbar__wrapper">
     <div class="slider">
@@ -47,7 +53,7 @@
           <input id="color-picker" name="color-picker" type="color" />
         </li>
         <li class="li-6">
-          <div class="name">Download</div>
+          <div class="name">Text</div>
           <img id="text-box" onclick="createTextBox()" class="ico" src="./src/img/text.svg" alt="download" />
         </li>
         <li class="li-7">
@@ -80,7 +86,7 @@
 
   
   
-  <img id="bg-image" width="10%" height="10%" src="./src/img/exercise_book.jpg" alt="backgroundImage">
+  
 
   <script src="./src/scripts/constants.js"></script>
   <script src="./src/scripts/zoom.js"></script>
