@@ -10,8 +10,8 @@ const canvasOffsetY = 0;
 canvas.width = window.innerWidth - canvasOffsetX;
 canvas.height = window.innerHeight - canvasOffsetY;
 
-canvasImage.width = window.innerWidth - canvasOffsetX;
-canvasImage.height = window.innerHeight - canvasOffsetY;
+canvasImage.width = window.innerWidth;
+canvasImage.height = window.innerHeight;
 
 const blackBgBtn = document.getElementById("black-bg");
 const whiteBgBtn = document.getElementById("white-bg");

@@ -8,14 +8,15 @@ body {
 }
 
 .navbar {
-  background-color: white;
-  height: 10px;
-  position: relative;
-  top: 30px;
+  padding: 3px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  border-radius: 16px;
+  background: rgba(83, 83, 83, 0.25);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 input[type=text] {
@@ -230,6 +231,7 @@ button {
   width: 300px;
   position: absolute;
   bottom: 120px;
+  margin: 0 auto 0 auto;
 }
 
 .value {

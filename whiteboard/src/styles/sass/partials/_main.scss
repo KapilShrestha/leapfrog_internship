@@ -13,17 +13,34 @@ body {
 
 
 }
+nav{
+	// background-color: white;
+	// position: relative;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+}
 
 .navbar {
-	background-color: white;
-	height: 10px;
-	position: relative;
-	top: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	// flex-direction: column;
-	gap: 20px;
+	// background-color: white;
+	// // height: 10px;
+	// position: relative;
+	// // top: 30px;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	// gap: 20px;
+	padding: 3px;
+		// width: auto;
+		// height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 16px;
+		background: rgba(83, 83, 83, 0.25);
+		backdrop-filter: blur(13px);
+		-webkit-backdrop-filter: blur(13px);
+		border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 // for createtextbox
@@ -49,7 +66,5 @@ input[type="text"] {
 	html{
 	width: 100%;
 	height: auto;
-	// overflow: visible;
 	}
-	
 }
