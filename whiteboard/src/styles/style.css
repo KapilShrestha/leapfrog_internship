@@ -72,6 +72,10 @@ p {
   font-family: "Comfortaa", sans-serif;
 }
 
+input {
+  display: none;
+}
+
 .toolbar__wrapper {
   display: flex;
   justify-content: center;

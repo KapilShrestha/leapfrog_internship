@@ -13,6 +13,7 @@ canvas.height = window.innerHeight - canvasOffsetY;
 canvasImage.width = window.innerWidth;
 canvasImage.height = window.innerHeight;
 
+const uploadImage = document.getElementById("upload-image");
 const blackBgBtn = document.getElementById("black-bg");
 const whiteBgBtn = document.getElementById("white-bg");
 const notebookBgbtn = document.getElementById("notebook-bg")
