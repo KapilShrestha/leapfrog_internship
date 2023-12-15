@@ -101,6 +101,8 @@ handTool.addEventListener("click", function (e) {
   });
   isHandSelected = !isHandSelected;
 });
+
+
 canvas.addEventListener("mousedown", function(e){
   isDragging = true;
 })

@@ -1,7 +1,7 @@
 textBoxTool.addEventListener("click", function (e) {
   isPenActive = false;
   isErasing = false;
-  if (isHandSelected) {
+  if (isTextToolSelected) {
     return;
   }
   isTextToolSelected = true;
