@@ -5,18 +5,39 @@ body {
   width: 100%;
   overflow: hidden;
   position: relative;
+  font-family: "Comfortaa", sans-serif;
+}
+
+nav {
+  font-family: "Comfortaa", sans-serif;
 }
 
 .navbar {
-  padding: 3px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border-radius: 16px;
   background: rgba(83, 83, 83, 0.25);
   backdrop-filter: blur(13px);
   -webkit-backdrop-filter: blur(13px);
   border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: "Comfortaa", sans-serif;
+}
+.navbar__middle {
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar button:hover {
+  background-color: rgba(105, 103, 103, 0.18);
+  color: white;
+  border-radius: 5px;
 }
 
 input[type=text] {
@@ -36,12 +57,21 @@ input[type=text] {
   display: none;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 @media screen and (max-width: 575px) {
   html {
     width: 100%;
     height: auto;
   }
 }
+.btn {
+  font-family: "Comfortaa", sans-serif;
+}
+
 .toolbar__wrapper {
   display: flex;
   justify-content: center;
@@ -50,16 +80,6 @@ input[type=text] {
   gap: 20px;
 }
 
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 400;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-}
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 800;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
-}
 .dock {
   width: 100%;
   height: 60px;

@@ -1,5 +1,4 @@
 $color_1: rgba(255, 255, 255, 0.9);
-$font-family_1: "San Francisco";
 $dock-height : 60px;
 $dock-margin-bottom: 50px;
 .toolbar{
@@ -12,16 +11,16 @@ $dock-margin-bottom: 50px;
 		// padding: auto  auto 20px auto;
 	}
 }
-@font-face {
-	font-family: "San Francisco";
-	font-weight: 400;
-	src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-}
-@font-face {
-	font-family: "San Francisco";
-	font-weight: 800;
-	src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
-}
+// @font-face {
+// 	font-family: "San Francisco";
+// 	font-weight: 400;
+// 	src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+// }
+// @font-face {
+// 	font-family: "San Francisco";
+// 	font-weight: 800;
+// 	src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+// }
 .dock {
 	width: 100%;
 	height: $dock-height;

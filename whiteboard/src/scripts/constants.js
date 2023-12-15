@@ -28,6 +28,9 @@ const bgImg = document.getElementById("bg-image")
 
 slider.style.display = "none";
 
+let white = "#fff";
+let black = "#000";
+let primaryColor = "#595959";
 
 
 let isHandSelected = false;
@@ -60,6 +63,3 @@ let offsetX = 0;
 let offsetY = 0;
 
 
-let white = "#fff"
-let black = "#000"
-let primaryColor = "#595959"

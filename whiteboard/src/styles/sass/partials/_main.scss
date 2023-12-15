@@ -3,68 +3,88 @@ $background-color_1: black;
 $background-color_2: blue;
 
 body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	position: relative;
-
-
-
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Comfortaa', sans-serif;
+  
+  
 }
 nav{
-	// background-color: white;
-	// position: relative;
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
+	font-family: 'Comfortaa', sans-serif;
 }
 
+
+
 .navbar {
-	// background-color: white;
-	// // height: 10px;
-	// position: relative;
-	// // top: 30px;
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
-	// gap: 20px;
-	padding: 3px;
-		// width: auto;
-		// height: auto;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 16px;
-		background: rgba(83, 83, 83, 0.25);
-		backdrop-filter: blur(13px);
-		-webkit-backdrop-filter: blur(13px);
-		border: 1px solid rgba(255, 255, 255, 0.18);
+	display: flex;
+	justify-content: space-around;
+	border-radius: 16px;
+    background: rgba(83, 83, 83, 0.25);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+	font-family: 'Comfortaa', sans-serif;
+	
+  &__middle {
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	
+   
+  }
+  &__right{
+	display: flex;
+	justify-content: center;
+	// gap: 70px;
+	align-items: center;
+	
+
+  }
 }
+.navbar button:hover {
+	background-color:  rgba(105, 103, 103, 0.18); 
+	color: white;
+	border-radius: 5px;
+	
+  }
 
 // for createtextbox
 
 input[type="text"] {
-	border: none;
-	/* Removing border from text boxes */
-	outline: none;
-	/* Removing the outline */
-	background: transparent;
+  border: none;
+  /* Removing border from text boxes */
+  outline: none;
+  /* Removing the outline */
+  background: transparent;
 }
 
 .image-board {
-	position: absolute;
-	z-index: -1;
+  position: absolute;
+  z-index: -1;
 }
 
 .bg__image {
-	display: none;
+  display: none;
+}
+p{
+	margin: 0;
+	padding: 0;
 }
 
-@media screen and (max-width:575px) {
-	html{
-	width: 100%;
-	height: auto;
-	}
+@media screen and (max-width: 575px) {
+  html {
+    width: 100%;
+    height: auto;
+  }
 }
+.btn{
+	font-family: 'Comfortaa', sans-serif;
+
+}
+
+
