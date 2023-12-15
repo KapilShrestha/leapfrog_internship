@@ -40,7 +40,7 @@ nav {
   border-radius: 5px;
 }
 
-input[type=text] {
+input[type=textarea] {
   border: none;
   /* Removing border from text boxes */
   outline: none;
@@ -63,6 +63,12 @@ p {
 }
 
 @media screen and (max-width: 575px) {
+  html {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 768px) {
   html {
     width: 100%;
     height: auto;
@@ -254,7 +260,7 @@ button {
 .slider {
   width: 300px;
   position: absolute;
-  bottom: 120px;
+  bottom: 150px;
   margin: 0 auto 0 auto;
 }
 

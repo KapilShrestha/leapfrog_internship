@@ -10,52 +10,55 @@ body {
   overflow: hidden;
   position: relative;
   font-family: 'Comfortaa', sans-serif;
-  
-  
+
+
 }
-nav{
-	font-family: 'Comfortaa', sans-serif;
+
+nav {
+  font-family: 'Comfortaa', sans-serif;
 }
 
 
 
 .navbar {
-	display: flex;
-	justify-content: space-around;
-	border-radius: 16px;
-    background: rgba(83, 83, 83, 0.25);
-    backdrop-filter: blur(13px);
-    -webkit-backdrop-filter: blur(13px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-	font-family: 'Comfortaa', sans-serif;
-	
+  display: flex;
+  justify-content: space-around;
+  border-radius: 16px;
+  background: rgba(83, 83, 83, 0.25);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: 'Comfortaa', sans-serif;
+
   &__middle {
     padding: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
-	
-   
+
+
   }
-  &__right{
-	display: flex;
-	justify-content: center;
-	// gap: 70px;
-	align-items: center;
-	
+
+  &__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 
   }
 }
+
 .navbar button:hover {
-	background-color:  rgba(105, 103, 103, 0.18); 
-	color: white;
-	border-radius: 5px;
-	
-  }
+  background-color: rgba(105, 103, 103, 0.18);
+  color: white;
+  border-radius: 5px;
+
+}
 
 // for createtextbox
 
-input[type="text"] {
+input[type="textarea"] {
+  
   border: none;
   /* Removing border from text boxes */
   outline: none;
@@ -71,9 +74,10 @@ input[type="text"] {
 .bg__image {
   display: none;
 }
-p{
-	margin: 0;
-	padding: 0;
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 575px) {
@@ -82,11 +86,18 @@ p{
     height: auto;
   }
 }
-.btn{
-	font-family: 'Comfortaa', sans-serif;
+@media screen and (max-width: 768px) {
+  html {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.btn {
+  font-family: 'Comfortaa', sans-serif;
 
 }
- .upload__input{
-  display: none;
- }
 
+.upload__input {
+  display: none;
+}

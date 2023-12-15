@@ -12,12 +12,13 @@ function createTextBox() {
     var x = event.clientX - canvas.getBoundingClientRect().left;
     var y = event.clientY - canvas.getBoundingClientRect().top;
 
-    var input = document.createElement("input");
-    input.type = "text";
+    var input = document.createElement("textarea");
+    input.type = "textarea";
     input.style.position = "absolute";
     input.style.left = x + "px";
     input.style.top = y + "px";
     input.style.minWidth = "50px"; // Set a minimum width
+    input.style.border = "none";
 
     document.body.appendChild(input);
 
