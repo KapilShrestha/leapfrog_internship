@@ -130,12 +130,31 @@ function calcBoundary(curve) {
   let maxY = Math.max(...curve.map((c) => c.y));
   return { minX, minY, maxX, maxY };
 }
-function drawBoundingBox( minX, minY, maxX, maxY ) {  
+
+
+
+function drawBoundingBox( minX, minY, maxX, maxY) {  
   ctx.strokeStyle = "red";
   ctx.lineWidth = 2;
   ctx.strokeRect(minX, minY, maxX - minX, maxY - minY);
   ctx.strokeStyle = "black"; // Reset to default
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // to save the canvas in png format
 function saveCanvas() {
