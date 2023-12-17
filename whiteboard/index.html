@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/styles/style.css" />
   <title>whiteboard</title>
 </head>
@@ -14,8 +14,7 @@
 <body>
   <nav>
     <div class="navbar">
-      <div class="navbar__right">
-        <!-- <p>Whiteboard</p> -->
+      <div class="navbar__left">
         <label for="upload-image">Upload</label>
         <input class="upload__input" type="file" class="btn" id="upload-image" accept="image/*">
       </div>
@@ -25,7 +24,7 @@
         <button type="button" id="notebook-bg" class="btn">Notebook</button>
       </div>
       <div class="navbar__right">
-        <button type="button" id="save-canvas" onclick="saveCanvas()"> Download</button>
+        <button type="button" id="save-canvas" onclick="saveCanvas()" class="btn"> Download</button>
       </div>
     </div>
   </nav>
@@ -70,11 +69,19 @@
           <div class="name">Text</div>
           <img id="text-box" onclick="createTextBox()" class="ico" src="./src/img/text.svg" alt="download" />
         </li>
-        <li class="li-7">
+        <!-- <li class="li-7">
           <div class="name">Shapes</div>
           <img id="shapes" class="ico" src="./src/img/shapes.svg" alt="" />
+        </li> -->
+        <li class="li-7">
+          <div class="name">Circle</div>
+          <img id="add-circle" class="ico" src="./src/img/shapes.svg" alt="" />
         </li>
         <li class="li-8">
+          <div class="name">Rectangle</div>
+          <img id="add-rectangle" class="ico" src="./src/img/shapes.svg" alt="" />
+        </li>
+        <li class="li-9">
           <div class="name">wipe</div>
           <img id="clear" class="ico" src="./src/img/wipe.svg" alt="" />
         </li>
@@ -110,6 +117,7 @@
   <script src="./src/scripts/textbox.js"></script>
   <script src="./src/scripts/bgcanvas.js"></script>
   <script src="./src/scripts/upload.js"></script>
+  <script src="./src/scripts/shapes.js"></script>
   <!-- <script src="./src/scripts/cursor.js"></script> -->
   <script src="./src/scripts/index.js"></script>
 </body>

@@ -79,6 +79,7 @@ handTool.addEventListener("click", function (e) {
   isPenActive = false;
   isErasing = false;
   isTextToolSelected = false;
+  // isDragging = True;
 
   document.body.classList.remove("pen__default");
   document.body.classList.remove("eraser__default");

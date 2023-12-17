@@ -9,7 +9,7 @@ function drawShapes() {
     } else if (shape.type === "circle") {
       ctx.arc(shape.x, shape.y, shape.radius, 0, Math.PI * 2);
     }
-    ctx.fillStyle = shape.color;
+    ctx.fillStyle = selectedColor;
     ctx.fill();
     ctx.closePath();
   }
@@ -32,6 +32,7 @@ function isMouseInsideShape(mouseX, mouseY, shape) {
   return false;
 }
 
+
 canvas.addEventListener("mousedown", function (e) {
   let mouseX = e.clientX - canvas.getBoundingClientRect().left;
   let mouseY = e.clientY - canvas.getBoundingClientRect().top;
@@ -40,7 +41,7 @@ canvas.addEventListener("mousedown", function (e) {
   for (let i = shapes.length - 1; i >= 0; i--) {
     if (isMouseInsideShape(mouseX, mouseY, shapes[i])) {
       selectedShape = shapes[i];
-      isDragging = true;
+      // isDragging = true;
       break;
     }
   }
@@ -70,7 +71,7 @@ rectangleTool.addEventListener("click", function () {
       y: 50,
       width: 80,
       height: 60,
-      color: "blue",
+      color: "#595959",
     };
     shapes.push(rectangle);
     drawShapes();
@@ -83,12 +84,11 @@ circleTool.addEventListener("click", function () {
       x: 150,
       y: 150,
       radius: 40,
-      color: "red",
+      color: "#595959",
     };
     shapes.push(circle);
     drawShapes();
   });
-// Previous code remains unchanged
 
 let resizeHandleRadius = 5; // Radius of the resize handles
 
@@ -125,7 +125,7 @@ canvas.addEventListener("mousedown", function (e) {
         isResizing = true;
         break;
       }
-      isDragging = true;
+      // isDragging = true;
       isResizing = false;
       break;
     }
@@ -162,5 +162,3 @@ canvas.addEventListener("mouseup", function () {
   isDragging = false;
   isResizing = false;
 });
-
-console.log(shapes, "abcd");
