@@ -2,6 +2,7 @@ window.onload = function () {
   notebookBgbtn.addEventListener("click", function (e) {
     isBlackBtnSelected = false;
     isWhiteBtnSelected = false;
+    
     ctx.strokeStyle = selectedColor;
 
     if (isNotebookSelected) {
@@ -9,6 +10,8 @@ window.onload = function () {
     }
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctxImage.clearRect(0, 0, canvasImage.width, canvasImage.height);
+    shapes = [];
+    curves = [];
     ctxImage.drawImage(bgImg, 0, 0, canvasImage.width, canvasImage.height);
     isNotebookSelected = !isNotebookSelected;
   });
@@ -17,12 +20,15 @@ window.onload = function () {
 blackBgBtn.addEventListener("click", function (e) {
   isNotebookSelected = false;
   isWhiteBtnSelected = false;
-  ctx.strokeStyle = "white";
+  selectedColor = "#fff";
+  ctx.strokeStyle = selectedColor;
   if (isBlackBtnSelected) {
     return;
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctxImage.clearRect(0, 0, canvasImage.width, canvasImage.height);
+  shapes = [];
+    curves = [];
   // changeBackgroundColor();
   ctxImage.fillStyle = "black";
   ctxImage.fillRect(0, 0, canvasImage.width, canvasImage.height);
@@ -32,13 +38,17 @@ blackBgBtn.addEventListener("click", function (e) {
 whiteBgBtn.addEventListener("click", function (e) {
   isBlackBtnSelected = false;
   isNotebookSelected = false;
+  selectedColor ="#000";
   ctx.strokeStyle = selectedColor;
   if (isBlackBtnSelected) {
     return;
   }
-  isWhiteBtnSelected = !isWhiteBtnSelected;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctxImage.clearRect(0, 0, canvasImage.width, canvasImage.height);
+  shapes = [];
+    curves = [];
   ctxImage.fillStyle = "white";
   ctxImage.fillRect(0, 0, canvasImage.width, canvasImage.height);
+  isWhiteBtnSelected = !isWhiteBtnSelected;
 });
+

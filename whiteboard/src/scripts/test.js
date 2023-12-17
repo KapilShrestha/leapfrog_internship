@@ -30,6 +30,7 @@ function startDraw(e) {
 }
 
 const draw = (e) => {
+  
   if (!isPainting) {
     return;
   }
@@ -95,12 +96,14 @@ function endDraw(e) {
 
   console.log(curves);
 }
+
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("touchstart", startDraw);
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("touchmove", draw);
 canvas.addEventListener("mouseup", endDraw);
 canvas.addEventListener("touchend", endDraw);
+
 
 // to remove last drawn element
 document.addEventListener("keydown", (event) => {
@@ -115,10 +118,13 @@ document.addEventListener("keydown", (event) => {
 });
 
 function redrawCanvas() {
+  if (img){
+    ctx.drawImage(img, 0, 0, img.width, img.height);
+
+  }
+  
   curves.forEach((curve) => {
     ctx.beginPath();
-    console.log(curve);
-    //
     curve.currentCurve.forEach((point, index) => {
       if (index === 0) {
         ctx.moveTo(point.x, point.y);
@@ -142,7 +148,7 @@ function calcBoundary(curve) {
 
 function drawBoundingBox(minX, minY, maxX, maxY) {
   ctx.strokeStyle = "red";
-  ctx.lineWidth = 2;
+  ctx.lineWidth = 1;
   ctx.strokeRect(minX, minY, maxX - minX, maxY - minY);
   ctx.strokeStyle = "black"; // Reset to default
 }
@@ -159,3 +165,7 @@ function saveCanvas() {
 }
 
 // changing background
+
+
+
+console.log(isHandSelected, "test for handtool")

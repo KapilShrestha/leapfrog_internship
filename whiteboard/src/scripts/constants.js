@@ -45,7 +45,7 @@ let isPenActive = false;
 let isNotebookSelected = false;
 let isBlackBtnSelected = false;
 let isWhiteBtnSelected = false;
-let selectedColor = "#000"
+let selectedColor = "#000";
 let isResizing;
 let selectedCurve = null;
 
@@ -59,7 +59,7 @@ let startY;
 
 let currentCurve = []; // To store points of the current curve
 
-const curves = []; // To store all curves drawn
+let curves = []; // To store all curves drawn
 let shapes = []; // Array to store shapes (rectangles and circles)
 let selectedShape = null; // Currently selected shape
 
@@ -67,5 +67,5 @@ let selectedShape = null; // Currently selected shape
 let scale = 1;
 let offsetX = 0;
 let offsetY = 0;
-
+let img;
 

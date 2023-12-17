@@ -30,6 +30,7 @@ function startDraw(e) {
 }
 
 const draw = (e) => {
+  
   if (!isPainting) {
     return;
   }
@@ -46,7 +47,7 @@ const draw = (e) => {
       false
     );
     ctx.fill();
-    console.log(ctx.fill(), "fillcolor")
+    console.log(ctx.fill(), "fillcolor");
   } else {
     const { clientX, clientY } = e.touches ? e.touches[0] : e;
     ctx.globalCompositeOperation = "source-over";
@@ -82,16 +83,27 @@ function endDraw(e) {
 
   const { minX, minY, maxX, maxY } = calcBoundary(currentCurve);
   console.log(minX, minY, maxX, maxY);
-  curves.push({id: Date.now(), currentCurve, minX, minY, maxX, maxY, lineWidth, selectedColor});
+  curves.push({
+    id: Date.now(),
+    currentCurve,
+    minX,
+    minY,
+    maxX,
+    maxY,
+    lineWidth,
+    selectedColor,
+  });
 
   console.log(curves);
 }
+
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("touchstart", startDraw);
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("touchmove", draw);
 canvas.addEventListener("mouseup", endDraw);
 canvas.addEventListener("touchend", endDraw);
+
 
 // to remove last drawn element
 document.addEventListener("keydown", (event) => {
@@ -106,10 +118,13 @@ document.addEventListener("keydown", (event) => {
 });
 
 function redrawCanvas() {
+  if (img){
+    ctx.drawImage(img, 0, 0, img.width, img.height);
+
+  }
+  
   curves.forEach((curve) => {
     ctx.beginPath();
-    console.log(curve)
-    // 
     curve.currentCurve.forEach((point, index) => {
       if (index === 0) {
         ctx.moveTo(point.x, point.y);
@@ -131,34 +146,16 @@ function calcBoundary(curve) {
   return { minX, minY, maxX, maxY };
 }
 
-
-
-function drawBoundingBox( minX, minY, maxX, maxY) {  
+function drawBoundingBox(minX, minY, maxX, maxY) {
   ctx.strokeStyle = "red";
-  ctx.lineWidth = 2;
+  ctx.lineWidth = 1;
   ctx.strokeRect(minX, minY, maxX - minX, maxY - minY);
   ctx.strokeStyle = "black"; // Reset to default
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // to save the canvas in png format
 function saveCanvas() {
-  const dataURL = canvas.toDataURL("image/png");  // Convert the canvas content to an image data URL
+  const dataURL = canvas.toDataURL("image/png"); // Convert the canvas content to an image data URL
   const link = document.createElement("a");
   link.download = "canvas_image.png"; // Set the file name
   link.href = dataURL; // Set the data URL as the href attribute
@@ -166,7 +163,4 @@ function saveCanvas() {
   link.click();
   document.body.removeChild(link); // Remove the link from the body
 }
-
-
-// changing background
 

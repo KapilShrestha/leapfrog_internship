@@ -1,15 +1,21 @@
 function drawShapes() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  redrawCanvas();
+
 
   for (let i = 0; i < shapes.length; i++) {
     let shape = shapes[i];
     ctx.beginPath();
     if (shape.type === "rectangle") {
       ctx.rect(shape.x, shape.y, shape.width, shape.height);
+      ctx.fillStyle = shape.color;
+
+
     } else if (shape.type === "circle") {
       ctx.arc(shape.x, shape.y, shape.radius, 0, Math.PI * 2);
+      ctx.fillStyle = shape.color;
     }
-    ctx.fillStyle = selectedColor;
+    
     ctx.fill();
     ctx.closePath();
   }
@@ -71,7 +77,7 @@ rectangleTool.addEventListener("click", function () {
       y: 50,
       width: 80,
       height: 60,
-      color: "#595959",
+      color: selectedColor,
     };
     shapes.push(rectangle);
     drawShapes();
@@ -84,7 +90,7 @@ circleTool.addEventListener("click", function () {
       x: 150,
       y: 150,
       radius: 40,
-      color: "#595959",
+      color: selectedColor,
     };
     shapes.push(circle);
     drawShapes();
