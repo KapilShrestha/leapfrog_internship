@@ -24,7 +24,10 @@ const handTool = document.getElementById("hand");
 const colorPickerTool = document.getElementById("color-picker");
 const slider = document.getElementById("sliderRange");
 const textBoxTool = document.getElementById("text-box");
-const bgImg = document.getElementById("bg-image")
+const bgImg = document.getElementById("bg-image");
+const circleTool = document.getElementById("add-circle");
+const rectangleTool = document.getElementById("add-rectangle");
+
 
 
 slider.style.display = "none";
@@ -57,6 +60,8 @@ let startY;
 let currentCurve = []; // To store points of the current curve
 
 const curves = []; // To store all curves drawn
+let shapes = []; // Array to store shapes (rectangles and circles)
+let selectedShape = null; // Currently selected shape
 
 // Initial scale and translation values
 let scale = 1;

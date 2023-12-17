@@ -1,8 +1,4 @@
-const shapesTool = getElementById("shapes");
-let shapes = []; // Array to store shapes (rectangles and circles)
-let selectedShape = null; // Currently selected shape
-let isDragging = false; // Flag to check if dragging
-function draw() {
+function drawShapes() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   for (let i = 0; i < shapes.length; i++) {
@@ -18,6 +14,7 @@ function draw() {
     ctx.closePath();
   }
 }
+
 function isMouseInsideShape(mouseX, mouseY, shape) {
   if (shape.type === "rectangle") {
     return (
@@ -57,7 +54,7 @@ canvas.addEventListener("mousemove", function (e) {
     selectedShape.x = mouseX;
     selectedShape.y = mouseY;
 
-    draw();
+    drawShapes();
   }
 });
 
@@ -66,31 +63,31 @@ canvas.addEventListener("mouseup", function () {
 });
 
 // Add rectangle
-document.getElementById("addRectangle").addEventListener("click", function () {
-  let rectangle = {
-    type: "rectangle",
-    x: 50,
-    y: 50,
-    width: 80,
-    height: 60,
-    color: "blue",
-  };
-  shapes.push(rectangle);
-  draw();
-});
+rectangleTool.addEventListener("click", function () {
+    let rectangle = {
+      type: "rectangle",
+      x: 50,
+      y: 50,
+      width: 80,
+      height: 60,
+      color: "blue",
+    };
+    shapes.push(rectangle);
+    drawShapes();
+  });
 
 // Add circle
-document.getElementById("addCircle").addEventListener("click", function () {
-  let circle = {
-    type: "circle",
-    x: 150,
-    y: 150,
-    radius: 40,
-    color: "red",
-  };
-  shapes.push(circle);
-  draw();
-});
+circleTool.addEventListener("click", function () {
+    let circle = {
+      type: "circle",
+      x: 150,
+      y: 150,
+      radius: 40,
+      color: "red",
+    };
+    shapes.push(circle);
+    drawShapes();
+  });
 // Previous code remains unchanged
 
 let resizeHandleRadius = 5; // Radius of the resize handles
@@ -115,7 +112,7 @@ function isMouseOnResizeHandle(mouseX, mouseY, shape) {
   return false;
 }
 
-shapesTool.addEventListener("mousedown", function (e) {
+canvas.addEventListener("mousedown", function (e) {
   let mouseX = e.clientX - canvas.getBoundingClientRect().left;
   let mouseY = e.clientY - canvas.getBoundingClientRect().top;
 
@@ -135,7 +132,7 @@ shapesTool.addEventListener("mousedown", function (e) {
   }
 });
 
-shapesTool.addEventListener("mousemove", function (e) {
+canvas.addEventListener("mousemove", function (e) {
   if (isDragging && selectedShape && !isResizing) {
     let mouseX = e.clientX - canvas.getBoundingClientRect().left;
     let mouseY = e.clientY - canvas.getBoundingClientRect().top;
@@ -143,7 +140,7 @@ shapesTool.addEventListener("mousemove", function (e) {
     selectedShape.x = mouseX;
     selectedShape.y = mouseY;
 
-    draw();
+    drawShapes();
   } else if (isResizing && selectedShape) {
     let mouseX = e.clientX - canvas.getBoundingClientRect().left;
     let mouseY = e.clientY - canvas.getBoundingClientRect().top;
@@ -157,7 +154,7 @@ shapesTool.addEventListener("mousemove", function (e) {
       selectedShape.radius = Math.sqrt(dx * dx + dy * dy);
     }
 
-    draw();
+    drawShapes();
   }
 });
 
@@ -165,3 +162,5 @@ canvas.addEventListener("mouseup", function () {
   isDragging = false;
   isResizing = false;
 });
+
+console.log(shapes, "abcd");
