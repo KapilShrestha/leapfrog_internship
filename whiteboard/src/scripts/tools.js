@@ -2,7 +2,7 @@ colorPickerTool.addEventListener("click", function (e) {
   document.body.classList.remove("eraser__default");
   document.body.classList.remove("text__default");
   document.body.classList.add("pen__default");
-  isPenActive = true;
+  isPenActive = false;
   isErasing = false;
   isHandSelected = false;
   slider.style.display = "block"; //displays when color is selected
