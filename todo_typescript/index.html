@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <title>Task</title>
+</head>
+
+<body>
+    <header class="header">
+        <div id="app" class="app">
+            <div id="search-container" class="search-container">
+                <input type="text" id="search-input" class="input" placeholder="Search..." />
+            </div>
+            <div id="tabs" class="tabs">
+                <button type="button" id="tab-remaining" class="tab" onclick="switchTab('remaining')">Remaining</button>
+                <button type="button" id="tab-all" class="tab active" onclick="switchTab('all')">All Tasks</button>
+                <button type="button" id="tab-completed" class="tab" onclick="switchTab('completed')">Completed</button>
+            </div>
+            
+    </header>
+
+    
+    <div id="controls" class="controls">
+        <input type="text" id="new-task-input" class="input" placeholder="New Task..." />
+        <button id="add-task" class="btn btn-add" onclick="addTask()">Add Task</button>
+    </div>
+    <div id="task-list">
+        <!-- Task items added here -->
+    </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

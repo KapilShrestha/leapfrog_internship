@@ -1,0 +1,224 @@
+$primary-color: #2196f3;
+$accent-color: #ff4081;
+$background-color: #f5f5f5;
+$text-color: #242323;
+$font-family: "Comfortaa", sans-serif;
+$nunito-font: "Nunito", sans-serif;
+$mobile-breakpoint: 576px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 992px;
+$large-desktop-breakpoint: 1200px;
+
+body {
+  font-family: $nunito-font;
+  background-color: $background-color;
+  margin: 0 auto;
+  padding: 0 auto;
+  width: 800px;
+}
+
+.header {
+  background-color: $primary-color;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 20px 20px 0 0;
+  margin: 10px auto;
+}
+
+#tab-remaining.active,
+#tab-completed.active,
+#tab-all.active {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.app {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .tab {
+    background-color: transparent;
+    font-family: $nunito-font;
+    border: none;
+    border-radius: 10px;
+    color: $text-color;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition: background-color 0.5s ease;
+    color: white;
+
+    &:hover {
+      background-color: lighten($primary-color, 40%);
+      color: $text-color;
+    }
+
+    &.active {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+      }
+    }
+  }
+}
+
+.search-container {
+  text-align: center;
+  margin-top: 20px;
+
+  .input {
+    padding: 10px;
+    font-family: $nunito-font;
+    width: 80%;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    transition: border 0.3s ease;
+
+    &:focus {
+      border: 1px solid $primary-color;
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  gap: 30px;
+
+  .input {
+    font-family: $nunito-font;
+    padding: 10px;
+    width: 100%;
+    // height: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    transition: border 0.3s ease;
+
+    &:focus {
+      border: 1px solid $primary-color;
+    }
+  }
+
+  .btn-add {
+    background-color: $primary-color;
+    font-family: $nunito-font;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    margin: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 30%);
+    }
+  }
+}
+
+// Task List styles
+#task-list {
+  margin-top: 20px;
+
+  .task-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .task-checkbox {
+      flex: 0 0 auto;
+      margin-right: 10px;
+
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+    }
+
+    .task-text {
+      flex: 1;
+      font-size: 16px;
+      color: $text-color;
+    }
+
+    .task-actions {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.btn-delete {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(#ff5722, 10%);
+  }
+}
+
+.form-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  body {
+    width: 100%;
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  body {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  body {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: $large-desktop-breakpoint) {
+  body {
+    width: 75%;
+  }
+}
