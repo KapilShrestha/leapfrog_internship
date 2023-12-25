@@ -107,7 +107,8 @@ function renderList(tasks: TaskList) {
 
         element.appendChild(deleteButton);
 
-        taskListElement.appendChild(element);
+        // taskListElement.appendChild(element);
+        taskListElement.insertBefore(element, taskListElement.firstChild);
     });
 }
 function deleteTask(id: string): void {
