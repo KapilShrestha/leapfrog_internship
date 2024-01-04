@@ -2,7 +2,7 @@ CREATE TABLE Orders(
 	OrderID int,
 	CustomerID int,
 	EmployeeID int,
-	OrderDate timestamp,
+	OrderDate date,
 	ShipperID int,
 	PRIMARY KEY(OrderId),
 	FOREIGN KEY(CustomerID) REFERENCES Customers (CustomerId) ON DELETE CASCADE,
