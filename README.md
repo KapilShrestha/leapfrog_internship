@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains a collection of projects completed during the internship at Leapfrog Technology. Each project showcases different skills and technologies learned and applied during the internship period.
+This repository contains a collection of projects completed during the internship at Leapfrog Technology. Each project showcases different skills and technologies learned and applied during the internship period.<br>
 You can access the lists of the projects from [here](https://kapilshrestha.github.io/leapfrog_internship/)
 
 ## Projects List
@@ -17,8 +17,8 @@ You can access the lists of the projects from [here](https://kapilshrestha.githu
    Successfully Completed within one day timeframe.
 
    - Technologies Used:
-   -- Vanilla Javascript
-   -- HTML / CSS
+      - Vanilla Javascript
+      - HTML / CSS
 
 2. **[White Board](https://kapilshrestha.github.io/leapfrog_internship/whiteboard/)**
    The Whiteboard App is tailored for writing, providing users with a familiar interface resembling a physical whiteboard commonly found in classrooms. This focus on writing aims to facilitate educational activities, brainstorming sessions, and collaborative learning experiences in a virtual environment. Find the [Source Code for Whiteboard](https://github.com/KapilShrestha/leapfrog_internship/tree/main/whiteboard).
@@ -30,9 +30,9 @@ You can access the lists of the projects from [here](https://kapilshrestha.githu
    Completed within a two-week timeframe.
 
    - Technologies Used: 
-   -- Javascript
-   -- [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
-   -- HTML / CSS
+      - Javascript
+      - [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+      - HTML / CSS
    
 
 3. **[Todo App](https://kapilshrestha.github.io/leapfrog_internship/todo_typescript/dist/index.html)**
@@ -45,9 +45,9 @@ You can access the lists of the projects from [here](https://kapilshrestha.githu
    Successfully Completed within one day timeframe.
 
    - Technologies Used: 
-   -- Typescript
-   -- HTML 
-   -- SASS
+   -   - Typescript
+   -   - HTML 
+   -   - SASS
 
 4. **[Doodle Jump](https://kapilshrestha.github.io/leapfrog_internship/doodle_jump/)**
    Doodle Jump is a fun and addictive game where players control a character that jumps from platform to platform, aiming to climb as high as possible while avoiding obstacles. Inspired by the classic arcade game, this project brings the nostalgic experience to the digital world. Find the [Source Code for Doodle Jump](https://github.com/KapilShrestha/leapfrog_internship/tree/main/doodle_jump).
