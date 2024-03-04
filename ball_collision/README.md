@@ -6,15 +6,15 @@ The Ball Collision project demonstrates a simple simulation of ball collision dy
  - Goal:
    <br>The aim was to create an interactive and visually engaging demonstration of ball collision dynamics, providing insight into basic physics concepts.
 
-   - Project Duration:
+- Project Duration:
    <br>Successfully Completed within one day timeframe.
 
-   - Technologies Used:
-      - Vanilla Javascript
-      - HTML / CSS
+- Technologies Used:
+    - Vanilla Javascript
+    - HTML / CSS
 
 ## Repository Structure
-
+```bash
 ball_collision
 │   └───src
 │       ├───scripts
