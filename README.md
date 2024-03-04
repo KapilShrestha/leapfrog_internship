@@ -11,10 +11,10 @@ You can access the lists of the projects from [here](https://kapilshrestha.githu
    The Ball Collision project demonstrates a simple simulation of ball collision dynamics, showcasing fundamental principles of physics in a virtual environment. Find the [Source Code for Ball Collision](https://github.com/KapilShrestha/leapfrog_internship/tree/main/ball_collision/)
 
    - Goal:
-   The aim was to create an interactive and visually engaging demonstration of ball collision dynamics, providing insight into basic physics concepts.
+   <br>The aim was to create an interactive and visually engaging demonstration of ball collision dynamics, providing insight into basic physics concepts.
 
    - Project Duration:
-   Successfully Completed within one day timeframe.
+   <br>Successfully Completed within one day timeframe.
 
    - Technologies Used:
       - Vanilla Javascript
@@ -24,10 +24,10 @@ You can access the lists of the projects from [here](https://kapilshrestha.githu
    The Whiteboard App is tailored for writing, providing users with a familiar interface resembling a physical whiteboard commonly found in classrooms. This focus on writing aims to facilitate educational activities, brainstorming sessions, and collaborative learning experiences in a virtual environment. Find the [Source Code for Whiteboard](https://github.com/KapilShrestha/leapfrog_internship/tree/main/whiteboard).
 
    - Goal:
-   The goal was to create an intuitive and user-friendly tool that enables users to express their ideas and concepts seamlessly.
+   <br>The goal was to create an intuitive and user-friendly tool that enables users to express their ideas and concepts seamlessly.
 
    - Project Duration:
-   Completed within a two-week timeframe.
+   <br>Completed within a two-week timeframe.
 
    - Technologies Used: 
       - Javascript
@@ -39,29 +39,29 @@ You can access the lists of the projects from [here](https://kapilshrestha.githu
    The Whiteboard App is tailored for writing, providing users with a familiar interface resembling a physical whiteboard commonly found in classrooms. This focus on writing aims to facilitate educational activities, brainstorming sessions, and collaborative learning experiences in a virtual environment. Find the [Source Code for Todo](https://github.com/KapilShrestha/leapfrog_internship/tree/main/todo_typescript).
 
    - Goal:
-   The goal was to create an intuitive and user-friendly tool that enables users to express their ideas and concepts seamlessly.
+   <br>The goal was to create an intuitive and user-friendly tool that enables users to express their ideas and concepts seamlessly.
 
    - Project Duration:
-   Successfully Completed within one day timeframe.
+   <br>Successfully Completed within one day timeframe.
 
    - Technologies Used: 
-   -   - Typescript
-   -   - HTML 
-   -   - SASS
+      - Typescript
+      - HTML 
+      - SASS
 
 4. **[Doodle Jump](https://kapilshrestha.github.io/leapfrog_internship/doodle_jump/)**
    Doodle Jump is a fun and addictive game where players control a character that jumps from platform to platform, aiming to climb as high as possible while avoiding obstacles. Inspired by the classic arcade game, this project brings the nostalgic experience to the digital world. Find the [Source Code for Doodle Jump](https://github.com/KapilShrestha/leapfrog_internship/tree/main/doodle_jump).
 
 
    - Goal:
-   The objective was to recreate the timeless charm of the classic arcade game Doodle Jump, offering players an entertaining and engaging experience on the web platform.
+   <br>The objective was to recreate the timeless charm of the classic arcade game Doodle Jump, offering players an entertaining and engaging experience on the web platform.
 
    - Project Duration:
-   Successfully Completed within one day timeframe.
+   <br>Successfully Completed within one day timeframe.
 
    - Technologies Used: 
-   -- Vanilla Javascript
-   -- HTML / CSS
+      - Vanilla Javascript
+      - HTML / CSS
 
 ## Repository Structure
 
@@ -92,7 +92,7 @@ All projects in this repository are open-source and licensed under the [MIT Lice
 ## Contact Information
 
 For inquiries or support related to specific projects, please reach out through:
-- [Email](mailto:kapilshrestha1001@gmail.com) or dm through 
+- [Email](mailto:kapilshrestha1001@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/kapil-shrestha-94115a293/):
 
 ## Acknowledgments
@@ -102,5 +102,5 @@ I am grateful for the opportunity to learn and grow alongside talented professio
 Huge thanks to my mentors for their guidance and to the friends for the support throughout the journey!
 
 - Special thanks to
--- [Abhishek Jyo Shrestha](https://www.linkedin.com/in/abhishek-jyo-shrestha-255222183/)
--- [Nishan Bajracharya](https://www.linkedin.com/in/nisbaj/)
+   - [Abhishek Jyo Shrestha](https://www.linkedin.com/in/abhishek-jyo-shrestha-255222183/)
+   - [Nishan Bajracharya](https://www.linkedin.com/in/nisbaj/)
