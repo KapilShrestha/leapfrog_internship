@@ -93,7 +93,7 @@ All projects in this repository are open-source and licensed under the [MIT Lice
 
 For inquiries or support related to specific projects, please reach out through:
 - [Email](mailto:kapilshrestha1001@gmail.com)
-- [LinkedIn](https://www.linkedin.com/in/kapil-shrestha-94115a293/):
+- [LinkedIn](https://www.linkedin.com/in/kapil-shrestha-94115a293/)
 
 ## Acknowledgments
 
