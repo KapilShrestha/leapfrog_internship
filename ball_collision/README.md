@@ -14,13 +14,13 @@ The Ball Collision project demonstrates a simple simulation of ball collision dy
     - HTML / CSS
 
 ## Repository Structure
-```bash
-ball_collision
-│   └───src
-│       ├───scripts
-│       └───styles
-│           └───sass
-│               └───partials
+    ```bash
+        ball_collision
+        │   └───src
+        │       ├───scripts
+        │       └───styles
+        │           └───sass
+        │               └───partials
 
 ## Installation
 To install and run the Ball Collision project locally on your machine, follow these steps:
